@@ -16,6 +16,9 @@ python -m agents.flat_agent --episodes 200 --seed 1
 # Hierarchical
 python -m agents.hier_agent --episodes 200 --seed 1 --beta 1.0 --alpha 0.5 --freq_on true --egs_on true
 
+## Plots
+python -m plots.plot_traces
+
 ## Outputs
 - logs/: selection traces, coherence scores, FREQ timeline
 - plots/: hold_time vs policy_entropy, adaptation_latency, OA vs FREQ

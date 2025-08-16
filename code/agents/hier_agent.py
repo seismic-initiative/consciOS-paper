@@ -4,9 +4,9 @@ from ..selection.resonance import resonance_score
 from ..logging.traces import TraceLogger
 
 
-def run(episodes: int, seed: int, beta: float, alpha: float, freq_on: bool, egs_on: bool):
+def run(episodes: int, seed: int, beta: float, alpha: float, freq_on: bool, egs_on: bool, log_path: str = "logs/hier_traces.csv"):
 	env = ShiftyGrid(seed=seed)
-	logger = TraceLogger(path="logs/hier_traces.csv", header=[
+	logger = TraceLogger(path=log_path, header=[
 		"episode","step","ctx","action","reward","norm_pos","score_left","score_right"
 	])
 	s = env.reset()

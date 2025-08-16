@@ -3,9 +3,9 @@ from ..env.shifty_grid import ShiftyGrid
 from ..logging.traces import TraceLogger
 
 
-def run(episodes: int, seed: int):
+def run(episodes: int, seed: int, log_path: str = "logs/flat_traces.csv"):
 	env = ShiftyGrid(seed=seed)
-	logger = TraceLogger(path="logs/flat_traces.csv", header=[
+	logger = TraceLogger(path=log_path, header=[
 		"episode","step","ctx","action","reward","norm_pos","score_left","score_right"
 	])
 	s = env.reset()
