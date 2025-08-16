@@ -126,7 +126,7 @@ Key literatures to cite and integrate in the Related Work section for this part:
 * Systems thinking: Senge (The Fifth Discipline); Meadows (Thinking in Systems) [1], [2].
 * Viable System Model / cybernetics: Stafford Beer; Checkland [3], [4].
 * Predictive processing & active inference: Friston et al. [5], [6].
-* Hierarchical control and meta‑reinforcement learning: Sutton & Barto (RL); hierarchical RL (options framework) [12], [8].
+* Hierarchical control and meta‑reinforcement learning: Sutton & Barto (RL); hierarchical RL (options framework) [12], [8], [7].
 * Affect science and interoception: Lazzarelli et al. (integrative review) [9].
 * Human‑in‑the‑loop RL, RLHF literature: technical reports (to be added). [10]
 
@@ -451,7 +451,7 @@ P4 (Quality Control latency): The time between holding a high‑coherence frame 
 
 * Active inference and model evidence as selection criteria (Friston et al.) [5], [6]
 * Affect as intrinsic reward and affect‑driven RL (Barthet et al.; Play with Emotion) [11]
-* Hierarchical RL and meta‑control frameworks (options, meta‑learning) (Sutton & Barto; Janssen et al.) [8], [12]
+* Hierarchical RL and meta‑control frameworks (options, meta‑learning) (Sutton & Barto; Janssen et al.) [8], [12], [7]
 * HRV and interoceptive measures as coherence proxies (Lazzarelli et al.; Barrowclough et al.) [9]
 
 ---
@@ -498,7 +498,7 @@ Measurement & tests: validate EGS mapping to physiological markers and predictiv
 
 ###### 6.4 Hierarchical reinforcement learning & meta‑learning
 
-Summary. Hierarchical RL (options framework) and meta‑learning formalize how agents learn temporally abstract actions and how priors or meta‑policies accelerate transfer and adaptation (Sutton & Barto; recent HRL surveys) [8], [12]. Switching controllers and gated meta‑policies provide the algorithmic ground for layered control.
+Summary. Hierarchical RL (options framework) and meta‑learning formalize how agents learn temporally abstract actions and how priors or meta‑policies accelerate transfer and adaptation (Sutton & Barto; recent HRL surveys) [8], [12], [7]. Switching controllers and gated meta‑policies provide the algorithmic ground for layered control.
 
 ConsciOS mapping. Echo/Super/Meta map naturally to low‑level option executors, mid‑level policy selectors, and meta‑learning priors. The FREQ Coin concept operationalizes the resource gating that unlocks higher‑complexity frames, analogous to budgeted computation or curiosity rewards.
 
@@ -754,6 +754,8 @@ Notes:
 [5] K. Friston, "The free-energy principle: a unified brain theory?," Nature Reviews Neuroscience, vol. 11, no. 2, pp. 127–138, 2010. doi:10.1038/nrn2787.
 
 [6] P. Lanillos, C. Meo, C. Pezzato, et al., "Active Inference in Robotics and Artificial Agents: Survey and Challenges," arXiv:2112.01871, 2021.
+
+[7] S. Pateria, B. Subagdja, A.-H. Tan, and C. Quek, "Hierarchical Reinforcement Learning: A Comprehensive Survey," ACM Computing Surveys, 54(5), 1–35, 2021. doi:10.1145/3453160.
 
 [8] R. S. Sutton and A. G. Barto, "Reinforcement Learning: An Introduction," 2nd ed. MIT Press, 2018.
 
