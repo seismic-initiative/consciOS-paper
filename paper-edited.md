@@ -351,7 +351,7 @@ where Φ_intero(·) is a vector of physiological interoceptive metrics (e.g., HR
 EGS serves multiple roles:
 
 * Local guidance heuristic for Echo‑Self (nearest‑lighter‑step moves): if EGS rises after a local perturbation, the perturbation direction is favored.
-* Reward shaping signal for RL agents: small positive EGS deltas can be used as intrinsic reward components. [9]
+* Reward shaping signal for RL agents: small positive EGS deltas can be used as intrinsic reward components. [11]
 * Stopping/holding criterion in Imagineer→Refine→Hold: sustained positive EGS over hold_T supports encoding of the chosen frame.
 
 [Figure 5: Emotional Guidance Scale (EGS) as a discretized interoceptive control signal.]
@@ -758,6 +758,8 @@ Notes:
 [9] Integrative review of interoception and affect — [CITATION NEEDED].
 
 [10] L. Ouyang, J. Wu, X. Jiang, et al., "Training language models to follow instructions with human feedback," in Advances in Neural Information Processing Systems (NeurIPS), 2022. arXiv:2203.02155.
+
+[11] Affect-driven reinforcement learning (e.g., "Play with Emotion") — [CITATION NEEDED].
 
 [12] R. S. Sutton, D. Precup, and S. Singh, "Between MDPs and semi-MDPs: A framework for temporal abstraction in reinforcement learning," Artificial Intelligence, vol. 112, nos. 1–2, pp. 181–211, 1999. doi:10.1016/S0004-3702(99)00052-1.
 
