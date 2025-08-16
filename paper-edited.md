@@ -18,15 +18,15 @@ Finally, we treat ancient contemplative models and long‑standing philosophical
 
 To avoid ambiguity we adopt canonical technical vocabulary for formal presentation (e.g., embodied controller, supervisory controller, meta‑controller, interoceptive feedback). For public communication and pedagogy we use a parallel set of ConsciOS aliases (Echo‑Self, Super‑Self, Meta‑Self, Kernel, Emotional Guidance Scale (EGS), FREQ Coin). On first occurrence in the main text the canonical term appears first followed by the ConsciOS alias in parentheses (for example, embodied controller (Echo‑Self)). Appendix C (Public Translation & Operationalization) provides a complete mapping table that links every ConsciOS alias to its canonical equivalent, an operational definition, suggested measurement instruments, and key citations. This dual‑labeling strategy preserves scientific rigor while enabling consistent public communication across community materials derived from this project.
 
-Note: all known canonical citations are inserted; any remaining [CITATION NEEDED] markers indicate items that require source confirmation.
+Note: all known canonical citations are inserted; any remaining items requiring source confirmation are marked in place.
 
-###### 1.3 Notation & Metric Preamble
+###### 1.2 Notation & Metric Preamble
 
 We use the following symbols consistently throughout the paper. Pi (Π) denotes a candidate policy frame; C(F; S) is a coherence metric between frame F and current state S; U(F) is task‑dependent expected utility; Cost(F) denotes computational/energetic costs; tau (τ) is a softmax temperature; lambda (λ) is a decay rate in cumulative measures. Option‑Availability (OA) is operationalized as an effective action set size weighted by calibrated affordance scores.
 
 Recipe (Option‑Availability): enumerate perceived viable actions at time t, assign a subjective affordance score a_i in [0,1] for each option i using a brief calibration, and compute OA(t) = sum_i a_i. For simulated agents, proxy OA by action entropy with an affordance calibration factor. These definitions support reproducible comparisons across ablations and pilots.
 
-###### 1.2 Methods Overview
+###### 1.3 Methods Overview
 
 This paper is primarily a conceptual and experimental design contribution. We propose (a) formal model definitions and algorithms for nested controller architectures, (b) operationalizations of affective and coherence measures, and (c) a set of hypothesis‑driven experimental probes and simulation benchmarks. Full experimental protocols, measurement specifications, and analysis plans are provided in Appendix A (Experimental Protocols) and Appendix B (Measurement Instruments & Analysis Pipelines). In brief:
 
@@ -221,8 +221,8 @@ We propose a hierarchical controller decomposition comprising three nested contr
 ###### 4.2 Formal definitions
 
 * Embodied controller (Echo‑Self): an agent module implementing short‑horizon perception–action loops. Formally, the Echo‑Self maintains a state estimate x_t and applies policy pi_e(a|x_t; theta_e) to produce actions a_t minimizing a local cost function L_e over short horizons H_e. Measures: reaction latency tau, short‑horizon cumulative reward R_e(H_e), and action entropy H[pi_e]. (Operationalized in Appendix B.) [8]
-* Supervisory controller / policy selector (Super‑Self): a mid‑horizon controller that aggregates feedback signals over time window T_s, evaluates a set of candidate high‑level policies {Π_i}, and selects a policy family Π* that maximizes a coherence‑weighted utility: Π* = argmax_i E[U(Π_i) · C(Π_i|S)], where C is a coherence metric derived from multi‑modal feedback. Measures: selection latency, selection accuracy under perturbation, and policy stability. [12]
-* Meta‑controller / prior generator (Meta‑Self): a long‑horizon process that shapes the prior distribution P(Π) over policy families and encodes identity constraints and long‑term objectives. Meta‑Self functions are updated on slow timescales via meta‑learning or aggregated quality‑control signals. Measures: prior concentration, transfer learning performance, and changes in P(Π) after structured interventions. [8]
+* Supervisory controller / policy selector (Super‑Self): a mid‑horizon controller that aggregates feedback signals over time window T_s, evaluates a set of candidate high‑level policies {Pi_i}, and selects a policy family Pi* that maximizes a coherence‑weighted utility: Pi* = argmax_i E[U(Pi_i) · C(Pi_i|S)], where C is a coherence metric derived from multi‑modal feedback. Measures: selection latency, selection accuracy under perturbation, and policy stability. [12]
+* Meta‑controller / prior generator (Meta‑Self): a long‑horizon process that shapes the prior distribution P(Pi) over policy families and encodes identity constraints and long‑term objectives. Meta‑Self functions are updated on slow timescales via meta‑learning or aggregated quality‑control signals. Measures: prior concentration, transfer learning performance, and changes in P(Pi) after structured interventions. [8]
 
 ###### 4.3 Mapping to Viable System Model and control theory
 
@@ -266,7 +266,7 @@ Pseudo: Imagineer_Refine_Hold(state s0, target_frame F, hold_T)
 
    e. t := t + delta_t
 3. End while
-4. Return final policy frame F_final, updated priors P'(Π)
+4. Return final policy frame F_final, updated priors P'(Pi)
 
 Notes: LocalSearch uses constrained perturbations to frames to increase coherence with current interoceptive/sensory state; NLS denotes the Nearest‑Lighter‑Step heuristic. Implementational choices (Simulate, CoherenceMetric, update rules) are experiment‑dependent and specified in Appendix A/B. [Mechanism / Hypothesis]
 
@@ -276,7 +276,7 @@ The Three‑Self architecture yields specific empirical signatures:
 
 * Hierarchical advantage: Agents with explicit Echo/Super/Meta stratification will show faster recovery from distributional shifts and higher transfer performance than flat agents (testable in hierarchical RL benchmarks). [Mechanism]
 * Kernel sensitivity: Manipulating Kernel inputs (e.g., altering affective feedback via HRV biofeedback) will causally influence Super‑Self selection patterns and measured Option‑Availability in human subjects. [Hypothesis]
-* Ego Autopilot dynamics: Under forced coherence degradation, behavior will converge to π_safe with characteristic latency and retention statistics; modulation of Kernel thresholds θ_safe will shift the conservatism index. [Hypothesis]
+* Ego Autopilot dynamics: Under forced coherence degradation, behavior will converge to pi_safe with characteristic latency and retention statistics; modulation of Kernel thresholds theta_safe will shift the conservatism index. [Hypothesis]
 
 ###### 4.8 Simulation & empirical testbeds
 
@@ -430,7 +430,7 @@ This loop uses NLS (Nearest‑Lighter‑Step) as a bounded local search heuristi
 
 ###### 5.8 Quality Control and belief surfacing dynamics
 
-Quality Control refers to the surfacing of misaligned priors when an agent holds a new high‑coherence frame. Formally, let prior parameters be θ. On holding a new frame F_hold with high C and sustained FREQ, large prediction mismatches elsewhere can produce a gradient for updating θ:
+Quality Control refers to the surfacing of misaligned priors when an agent holds a new high‑coherence frame. Formally, let prior parameters be theta. On holding a new frame F_hold with high C and sustained FREQ, large prediction mismatches elsewhere can produce a gradient for updating theta:
 
 Delta_theta proportional to eta · grad_theta L_total(theta; D_hold)
 
@@ -438,7 +438,7 @@ where L_total includes prediction error terms that were previously suppressed by
 
 ###### 5.9 Empirical signatures and testable predictions
 
-P1 (Selection stability tradeoff): Increasing β (coherence weight) in the selection rule raises frame stability (longer holding durations) but reduces exploratory policy diversity; this tradeoff can be measured in simulated agents by plotting mean hold_time vs policy entropy under varying β. [Mechanism; testbed: hierarchical RL]
+P1 (Selection stability tradeoff): Increasing b (coherence weight) in the selection rule raises frame stability (longer holding durations) but reduces exploratory policy diversity; this tradeoff can be measured in simulated agents by plotting mean hold_time vs policy entropy under varying b. [Mechanism; testbed: hierarchical RL]
 
 P2 (EGS predictive utility): Short‑horizon changes in EGS predict subsequent policy‑switch probability within Δt minutes in human experiments; validation via logistic regression controlling for task difficulty and baseline affect. [Hypothesis; testbed: human lab tasks with HRV + ladder]
 
@@ -485,9 +485,9 @@ Measurement & tests: map VSM components to measurable logs (policy switches, con
 
 Summary. Predictive processing and active inference cast perception and action as inference: agents minimize prediction error (or maximize model evidence) through action and belief updating [5], [6]. Hierarchical priors determine what the system expects, and precision weighting governs which errors prompt updates.
 
-ConsciOS mapping. The Resonance Engine's coherence metric (C) parallels model evidence and the selection rule (maximize αE[U] + βC − γCost) reframes selection as evidence‑weighted policy choice. The Meta‑Self corresponds to long‑timescale priors; Super‑Self performs evidence accumulation and selection. Quality Control dynamics directly correspond to precision‑weighted prediction error updates: holding a new frame increases exposure of misalignments that drive belief revision.
+ConsciOS mapping. The Resonance Engine's coherence metric (C) parallels model evidence and the selection rule (maximize a*E[U] + b*C − g*Cost) reframes selection as evidence‑weighted policy choice. The Meta‑Self corresponds to long‑timescale priors; Super‑Self performs evidence accumulation and selection. Quality Control dynamics directly correspond to precision‑weighted prediction error updates: holding a new frame increases exposure of misalignments that drive belief revision.
 
-Model status: strong formal alignment — many ConsciOS mechanisms are [Mechanism] under active inference reframing; selection weighting (α, β tuning) and FREQ Coin as time‑integrated evidence are integrative hypotheses that can be formalized and tested [Hypothesis → Mechanism with empirical support].
+Model status: strong formal alignment — many ConsciOS mechanisms are [Mechanism] under active inference reframing; selection weighting (a, b tuning) and FREQ Coin as time‑integrated evidence are integrative hypotheses that can be formalized and tested [Hypothesis -> Mechanism with empirical support].
 
 Measurement & tests: implement coherence as model evidence or KLD; compare selection by evidence vs utility in simulated agents; use active‑inference benchmarks to evaluate frame holding, belief revision timing, and quality‑control signatures.
 
@@ -719,7 +719,7 @@ Experimental Protocols (full templates)
 
 * A.5 Toy ablation (simulation demo) — purpose: verify telemetry and selector sensitivity. Setup: episodic context shifts; hierarchical agent with coherence‑weighted selection (b, a sweeps); outputs: selection traces and aggregated heatmaps (reward, alignment rate, position‑match proxy). Code: repository `code/` directory (env, agents, plots); figures are illustrative only.
 
-[Figure A1: Toy ablation heatmaps across β × α (reward, alignment rate, position‑match). Illustrative demo; not a benchmark result.]
+[Figure A1: Toy ablation heatmaps across b x a (reward, alignment rate, position‑match). Illustrative demo; not a benchmark result.]
 Image: preprint/figures/ablation.png
 
 (Each template: stepwise procedure, required hardware/software, analysis scripts skeleton, expected effect sizes, power calculations placeholder.)
