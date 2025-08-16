@@ -69,6 +69,7 @@ Operationalization for empirical research:
 Consequence for the ConsciOS architecture: the Iceberg Model provides the causal ladder used to argue where and how "frequency" and "coherence" interventions (see Section 4) operate. Interventions framed as "raising frequency" are hypothesized to effect change by altering internal constraints (mental models) and thereby shifting structural dynamics that produce different patterns and events. [Hypothesis]
 
 ![Figure 1. Iceberg Model diagnostic hierarchy spanning events, patterns, structures, and mental models.](preprint/figures/iceberg.png){ width=60% }
+_Credit_: adapted from systems‑thinking literature [2], [1].
 
 ###### 2.2 The 7‑Component Universal System Model (Architectural Template)
 
@@ -87,6 +88,7 @@ Formal note: this is a functional decomposition rather than a commitment to a si
 Utility: the 7‑component model enables cross‑domain mapping (human <-> software agent <-> institution) and provides a checklist for designing experiments, simulations, or interventions that aim to change system‑level behavior. [Analogy]
 
 ![Figure 2. Seven‑component universal system model (Inputs, Processes, Outputs, Feedback, Actors, External Constraints, Internal Constraints).](preprint/figures/seven_flows.png){ width=80% }
+_Credit_: ConsciOS synthesis; consistent with systems engineering/cybernetics and viable‑system decompositions [3], [4].
 
 ###### 2.3 Integrative Mapping: Iceberg <-> 7‑Component Model <-> ConsciOS Constructs
 
@@ -168,6 +170,7 @@ We formalize the Infinity Diagram as a nested control topology:
 This nested topology is isomorphic to viable‑system decompositions used in organizational cybernetics—lower operational units are supervised by higher intelligence while a meta‑governor maintains identity and global objectives (Beer; Checkland). Importantly, the ontology treats interplay between layers as bidirectional: the Meta‑Self constrains policy families top‑down, while feedback and Quality Control mechanisms induce bottom‑up belief revision.
 
 ![Figure 3. Infinity Diagram as a nested control topology mapping Echo‑Self, Super‑Self, and Meta‑Self.](preprint/figures/infinity.png){ width=65% }
+_Credit_: ConsciOS nested controller; informed by VSM and hierarchical control [3], [4], [8].
 
 3.4 Measurement constructs and testable mappings
 
@@ -343,6 +346,7 @@ P(choose F_i | S) proportional to exp(tau^{-1} · [a E[U] + b C − g Cost])
 where tau is a temperature parameter.
 
 ![Figure 4. Resonance Engine selection—composite scoring of expected utility, coherence, and cost with softmax or argmax selection.](preprint/figures/resonance.png){ width=70% }
+_Credit_: ConsciOS (this work); evidence/coherence framing relates to active inference [5], [6].
 
 ###### 5.4 Emotional Guidance Scale (EGS) as an internal control signal
 
@@ -359,6 +363,7 @@ EGS serves multiple roles:
 * Stopping/holding criterion in Imagineer→Refine→Hold: sustained positive EGS over hold_T supports encoding of the chosen frame.
 
 ![Figure 5. Emotional Guidance Scale (EGS) as a discretized interoceptive control signal.](preprint/figures/egs.png){ width=60% }
+_Credit_: ConsciOS (this work); interoception foundations [9].
 
 ###### 5.5 FREQ Coin: time‑integrated coherence currency
 
@@ -719,6 +724,7 @@ Experimental Protocols (full templates)
 * A.5 Toy ablation (simulation demo) — purpose: verify telemetry and selector sensitivity. Setup: episodic context shifts; hierarchical agent with coherence‑weighted selection (b, a sweeps); outputs: selection traces and aggregated heatmaps (reward, alignment rate, position‑match proxy). Code: repository `code/` directory (env, agents, plots); figures are illustrative only.
 
 ![Figure A1. Toy ablation heatmaps across b x a (reward, alignment rate, position‑match). Illustrative demo; not a benchmark result.](preprint/figures/ablation.png){ width=60% }
+_Credit_: ConsciOS demo (this work).
 
 (Each template: stepwise procedure, required hardware/software, analysis scripts skeleton, expected effect sizes, power calculations placeholder.)
 
