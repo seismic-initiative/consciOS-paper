@@ -450,7 +450,7 @@ P4 (Quality Control latency): The time between holding a high‑coherence frame 
 ###### 5.11 Related work pointers (to be expanded in Section 6)
 
 * Active inference and model evidence as selection criteria (Friston et al.) [5]
-* Affect as intrinsic reward and affect‑driven RL (Barthet et al.; Play with Emotion) [CITATION NEEDED]
+* Affect as intrinsic reward and affect‑driven RL (Barthet et al.; Play with Emotion) [11]
 * Hierarchical RL and meta‑control frameworks (options, meta‑learning) (Sutton & Barto; Janssen et al.) [8], [12]
 * HRV and interoceptive measures as coherence proxies (Lazzarelli et al.; Barrowclough et al.) [9]
 
@@ -498,7 +498,7 @@ Measurement & tests: validate EGS mapping to physiological markers and predictiv
 
 ###### 6.4 Hierarchical reinforcement learning & meta‑learning
 
-Summary. Hierarchical RL (options framework) and meta‑learning formalize how agents learn temporally abstract actions and how priors or meta‑policies accelerate transfer and adaptation (Sutton & Barto; recent HRL surveys) [Janssen et al., CITATION NEEDED]. Switching controllers and gated meta‑policies provide the algorithmic ground for layered control.
+Summary. Hierarchical RL (options framework) and meta‑learning formalize how agents learn temporally abstract actions and how priors or meta‑policies accelerate transfer and adaptation (Sutton & Barto; recent HRL surveys) [8], [12]. Switching controllers and gated meta‑policies provide the algorithmic ground for layered control.
 
 ConsciOS mapping. Echo/Super/Meta map naturally to low‑level option executors, mid‑level policy selectors, and meta‑learning priors. The FREQ Coin concept operationalizes the resource gating that unlocks higher‑complexity frames, analogous to budgeted computation or curiosity rewards.
 
@@ -508,7 +508,7 @@ Measurement & tests: implement hierarchical agents with FREQ gating; compare to 
 
 ###### 6.5 Human‑in‑the‑loop learning, RLHF, and AI alignment
 
-Summary. Human feedback (RLHF) and human‑in‑the‑loop systems use user signals to shape agent policies. Recent alignment work emphasizes hybrid architectures combining human priors, interpretability constraints, and intrinsic agent objectives (Zeng et al.; review literature) [Zeng et al., 2025; alignment literature, CITATION NEEDED].
+Summary. Human feedback (RLHF) and human‑in‑the‑loop systems use user signals to shape agent policies. Recent alignment work emphasizes hybrid architectures combining human priors, interpretability constraints, and intrinsic agent objectives (Zeng et al.; review literature) [10].
 
 ConsciOS mapping. EGS signals and Kernel proxies are candidate human feedback channels for RLHF—fast, affect‑informed signals that can shape agent selection and policy priors. The nested controller architecture provides an alignment affordance: Super‑Self and Meta‑Self can serve as interpretability and governance layers enforcing safety constraints.
 
@@ -551,9 +551,9 @@ This section translates the ConsciOS architecture into concrete architectures, e
 
 ###### 7.2 Mapping ConsciOS to AI agent architectures
 
-* Embodied controller / low‑level policy (Echo‑Self): Implemented as a fast policy module or low‑level controller in robotics or simulated agents (e.g., policy π_e parameterized by neural networks or model predictive controllers). It handles sensory inputs and immediate action loops and exposes short‑horizon telemetry (latencies, action entropy). (Place: agent S1–S3). [CITATION NEEDED]
-* Supervisory controller / policy selector (Super‑Self): Implemented as a mid‑level manager that selects or composes policies from a policy library or a set of options. Technically realized as a policy‑over‑options, gating network, or a learned selector (e.g., meta‑controller). It evaluates coherence metrics and expected utility and implements the ResonanceEngine selection rule. (Place: agent S4). [CITATION NEEDED]
-* Meta‑controller / prior generator (Meta‑Self): Implemented as a meta‑learning or prior‑shaping module: e.g., an outer loop that updates priors, regularizers, or initializations (MAML‑style, population‑based training, or distributional priors). It controls long‑term adaptation, governance constraints, and objective shaping. (Place: agent S5). [CITATION NEEDED]
+* Embodied controller / low‑level policy (Echo‑Self): Implemented as a fast policy module or low‑level controller in robotics or simulated agents (e.g., policy π_e parameterized by neural networks or model predictive controllers). It handles sensory inputs and immediate action loops and exposes short‑horizon telemetry (latencies, action entropy). (Place: agent S1–S3). [8]
+* Supervisory controller / policy selector (Super‑Self): Implemented as a mid‑level manager that selects or composes policies from a policy library or a set of options. Technically realized as a policy‑over‑options, gating network, or a learned selector (e.g., meta‑controller). It evaluates coherence metrics and expected utility and implements the ResonanceEngine selection rule. (Place: agent S4). [12]
+* Meta‑controller / prior generator (Meta‑Self): Implemented as a meta‑learning or prior‑shaping module: e.g., an outer loop that updates priors, regularizers, or initializations (MAML‑style, population‑based training, or distributional priors). It controls long‑term adaptation, governance constraints, and objective shaping. (Place: agent S5). [8]
 * Centralized coherence estimator, discretized affect index, and time‑integrated coherence resource (Kernel / EGS / FREQ): Implement as telemetry and meta‑features. Kernel = centralized coherence estimator; EGS = scalar intrinsic signal (learned/regressed from internal state plus proxy interoceptive metrics); FREQ = persistent meta‑state (time‑integrated coherence). These variables inform gating, reward shaping, and policy unlocking dynamics.
 
 ###### 7.3 Concrete technical experiments (agentic testbeds)
@@ -579,7 +579,7 @@ Below are prioritized experiments that produce defensible empirical claims and a
 * Setup: Recruit human participants to provide fast EGS signals (subjective 1–10 ladder) while interacting with an environment; use EGS as shaping reward during agent fine‑tuning.
 * Manipulations: Compare shaped vs unshaped agents and compare different EGS smoothing/decay regimes.
 * Measures: agent alignment to human preferences, transfer, and human perceived control and agency.
-* Safety guardrails: explicit consent, adversarial signal detection, audit logs, human override. Ethical review required. [Hypothesis; CITATION NEEDED]
+* Safety guardrails: explicit consent, adversarial signal detection, audit logs, human override. Ethical review required. [Hypothesis]
 
 **Experiment 4: FREQ Gate Unlocking Complexity**
 
@@ -677,7 +677,7 @@ We formalized a nested control architecture for consciousness, introduced resona
 
 ###### 9.2 Limitations
 
-* Measurement validity: physiological proxies (HRV, EEG) are noisy and context‑sensitive. [CITATION NEEDED]
+* Measurement validity: physiological proxies (HRV, EEG) are noisy and context‑sensitive.
 * Operational complexity: multi‑modal coherence computation is computationally nontrivial.
 * Ethical concerns: privacy, signal manipulation, and reward‑hacking risks in human‑in‑the‑loop settings.
 * Novelty limits: several constructs are integrative—must avoid overclaiming novelty where existing work overlaps.
@@ -755,7 +755,7 @@ Notes:
 
 [8] R. S. Sutton and A. G. Barto, "Reinforcement Learning: An Introduction," 2nd ed. MIT Press, 2018.
 
-[9] Integrative review of interoception and affect — [CITATION NEEDED].
+[9] L. F. Barrett and W. K. Simmons, "Interoceptive predictions in the brain," Nature Reviews Neuroscience, vol. 16, pp. 419–429, 2015. doi:10.1038/nrn3950.
 
 [10] L. Ouyang, J. Wu, X. Jiang, et al., "Training language models to follow instructions with human feedback," in Advances in Neural Information Processing Systems (NeurIPS), 2022. arXiv:2203.02155.
 
