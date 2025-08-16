@@ -125,7 +125,7 @@ Key literatures to cite and integrate in the Related Work section for this part:
 
 * Systems thinking: Senge (The Fifth Discipline); Meadows (Thinking in Systems) [1], [2].
 * Viable System Model / cybernetics: Stafford Beer; Checkland [3], [4].
-* Predictive processing & active inference: Friston et al. [5].
+* Predictive processing & active inference: Friston et al. [5], [6].
 * Hierarchical control and meta‑reinforcement learning: Sutton & Barto (RL); hierarchical RL (options framework) [12], [8].
 * Affect science and interoception: Lazzarelli et al. (integrative review) [9].
 * Human‑in‑the‑loop RL, RLHF literature: technical reports (to be added). [10]
@@ -449,7 +449,7 @@ P4 (Quality Control latency): The time between holding a high‑coherence frame 
 
 ###### 5.11 Related work pointers (to be expanded in Section 6)
 
-* Active inference and model evidence as selection criteria (Friston et al.) [5]
+* Active inference and model evidence as selection criteria (Friston et al.) [5], [6]
 * Affect as intrinsic reward and affect‑driven RL (Barthet et al.; Play with Emotion) [11]
 * Hierarchical RL and meta‑control frameworks (options, meta‑learning) (Sutton & Barto; Janssen et al.) [8], [12]
 * HRV and interoceptive measures as coherence proxies (Lazzarelli et al.; Barrowclough et al.) [9]
@@ -478,7 +478,7 @@ Measurement & tests: map VSM components to measurable logs (policy switches, con
 
 ###### 6.2 Predictive processing and active inference
 
-Summary. Predictive processing and active inference cast perception and action as inference: agents minimize prediction error (or maximize model evidence) through action and belief updating [5]. Hierarchical priors determine what the system expects, and precision weighting governs which errors prompt updates.
+Summary. Predictive processing and active inference cast perception and action as inference: agents minimize prediction error (or maximize model evidence) through action and belief updating [5], [6]. Hierarchical priors determine what the system expects, and precision weighting governs which errors prompt updates.
 
 ConsciOS mapping. The Resonance Engine’s coherence metric (C) parallels model evidence and the selection rule (maximize αE[U] + βC − γCost) reframes selection as evidence‑weighted policy choice. The Meta‑Self corresponds to long‑timescale priors; Super‑Self performs evidence accumulation and selection. Quality Control dynamics directly correspond to precision‑weighted prediction error updates: holding a new frame increases exposure of misalignments that drive belief revision.
 
@@ -752,6 +752,8 @@ Notes:
 [4] P. Checkland, "Systems Thinking, Systems Practice." John Wiley & Sons, 1981.
 
 [5] K. Friston, "The free-energy principle: a unified brain theory?," Nature Reviews Neuroscience, vol. 11, no. 2, pp. 127–138, 2010. doi:10.1038/nrn2787.
+
+[6] P. Lanillos, C. Meo, C. Pezzato, et al., "Active Inference in Robotics and Artificial Agents: Survey and Challenges," arXiv:2112.01871, 2021.
 
 [8] R. S. Sutton and A. G. Barto, "Reinforcement Learning: An Introduction," 2nd ed. MIT Press, 2018.
 
