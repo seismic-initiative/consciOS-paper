@@ -217,9 +217,9 @@ We propose a hierarchical controller decomposition comprising three nested contr
 
 ###### 4.2 Formal definitions
 
-* Embodied controller (Echo‑Self): an agent module implementing short‑horizon perception–action loops. Formally, the Echo‑Self maintains a state estimate x_t and applies policy π_e(a|x_t; θ_e) to produce actions a_t minimizing a local cost function L_e over short horizons H_e. Measures: reaction latency τ, short‑horizon cumulative reward R_e(H_e), and action entropy H[π_e]. (Operationalized in Appendix B.) [CITATION NEEDED]
-* Supervisory controller / policy selector (Super‑Self): a mid‑horizon controller that aggregates feedback signals over time window T_s, evaluates a set of candidate high‑level policies {Π_i}, and selects a policy family Π* that maximizes a coherence‑weighted utility: Π* = argmax_i E[U(Π_i) · C(Π_i|S)], where C is a coherence metric derived from multi‑modal feedback. Measures: selection latency, selection accuracy under perturbation, and policy stability. [CITATION NEEDED]
-* Meta‑controller / prior generator (Meta‑Self): a long‑horizon process that shapes the prior distribution P(Π) over policy families and encodes identity constraints and long‑term objectives. Meta‑Self functions are updated on slow timescales via meta‑learning or aggregated quality‑control signals. Measures: prior concentration, transfer learning performance, and changes in P(Π) after structured interventions. [CITATION NEEDED]
+* Embodied controller (Echo‑Self): an agent module implementing short‑horizon perception–action loops. Formally, the Echo‑Self maintains a state estimate x_t and applies policy π_e(a|x_t; θ_e) to produce actions a_t minimizing a local cost function L_e over short horizons H_e. Measures: reaction latency τ, short‑horizon cumulative reward R_e(H_e), and action entropy H[π_e]. (Operationalized in Appendix B.) [8]
+* Supervisory controller / policy selector (Super‑Self): a mid‑horizon controller that aggregates feedback signals over time window T_s, evaluates a set of candidate high‑level policies {Π_i}, and selects a policy family Π* that maximizes a coherence‑weighted utility: Π* = argmax_i E[U(Π_i) · C(Π_i|S)], where C is a coherence metric derived from multi‑modal feedback. Measures: selection latency, selection accuracy under perturbation, and policy stability. [12]
+* Meta‑controller / prior generator (Meta‑Self): a long‑horizon process that shapes the prior distribution P(Π) over policy families and encodes identity constraints and long‑term objectives. Meta‑Self functions are updated on slow timescales via meta‑learning or aggregated quality‑control signals. Measures: prior concentration, transfer learning performance, and changes in P(Π) after structured interventions. [8]
 
 ###### 4.3 Mapping to Viable System Model and control theory
 
@@ -227,8 +227,8 @@ The decomposition maps onto classical viable‑system structures: Echo‑Self al
 
 ###### 4.4 Kernel, Ego Autopilot, and safety subsystems
 
-* Central integrative hub (Kernel): operationally the Kernel is a focal interoceptive/state‑confidence signal used by controllers to estimate coherence. For humans, proxies include heart‑rate variability (HRV) and validated interoceptive accuracy measures; for agents, Kernel is implemented as a state‑estimator confidence metric (e.g., posterior precision). Kernel feeds into Super‑Self selection and into Quality Control loops that surface misaligned priors. [CITATION NEEDED]
-* Fallback safety controller (Ego Autopilot): a low‑variance default policy engaged under low confidence or low coherence. It minimizes risk and conserves resources. Formally, Ego Autopilot is a policy π_safe that is triggered when coherence C(x_t) < θ_safe. Measures: engagement frequency, conservatism index, and recovery time. This subsystem enforces safety and explains conservative behavioral reversion patterns. [CITATION NEEDED]
+* Central integrative hub (Kernel): operationally the Kernel is a focal interoceptive/state‑confidence signal used by controllers to estimate coherence. For humans, proxies include heart‑rate variability (HRV) and validated interoceptive accuracy measures; for agents, Kernel is implemented as a state‑estimator confidence metric (e.g., posterior precision). Kernel feeds into Super‑Self selection and into Quality Control loops that surface misaligned priors. [5]
+* Fallback safety controller (Ego Autopilot): a low‑variance default policy engaged under low confidence or low coherence. It minimizes risk and conserves resources. Formally, Ego Autopilot is a policy π_safe that is triggered when coherence C(x_t) < θ_safe. Measures: engagement frequency, conservatism index, and recovery time. This subsystem enforces safety and explains conservative behavioral reversion patterns. [1]–[4]
 
 ###### 4.5 Option‑availability and the FREQ Coin formalization
 
@@ -303,7 +303,7 @@ Several alternative coherence formulations are applicable depending on data moda
 
 * Evidence / log model evidence (Bayesian):
 
-  C(F_i; S) := log p(S | F_i) — model evidence under the generative model implied by F_i. [Mechanism; active inference framing] [CITATION NEEDED]
+  C(F_i; S) := log p(S | F_i) — model evidence under the generative model implied by F_i. [Mechanism; active inference framing] [5]
 * Negative divergence (information‑theoretic):
 
   C(F_i; S) := − D_KL [ p_obs(S) || p(S | F_i) ] — negative Kullback–Leibler divergence between observed state distribution and frame prediction.
@@ -351,7 +351,7 @@ where Φ_intero(·) is a vector of physiological interoceptive metrics (e.g., HR
 EGS serves multiple roles:
 
 * Local guidance heuristic for Echo‑Self (nearest‑lighter‑step moves): if EGS rises after a local perturbation, the perturbation direction is favored.
-* Reward shaping signal for RL agents: small positive EGS deltas can be used as intrinsic reward components. [CITATION NEEDED: affect‑driven RL literature]
+* Reward shaping signal for RL agents: small positive EGS deltas can be used as intrinsic reward components. [9]
 * Stopping/holding criterion in Imagineer→Refine→Hold: sustained positive EGS over hold_T supports encoding of the chosen frame.
 
 [Figure 5: Emotional Guidance Scale (EGS) as a discretized interoceptive control signal.]
@@ -449,10 +449,10 @@ P4 (Quality Control latency): The time between holding a high‑coherence frame 
 
 ###### 5.11 Related work pointers (to be expanded in Section 6)
 
-* Active inference and model evidence as selection criteria (Friston et al.) [CITATION NEEDED]
+* Active inference and model evidence as selection criteria (Friston et al.) [5]
 * Affect as intrinsic reward and affect‑driven RL (Barthet et al.; Play with Emotion) [CITATION NEEDED]
-* Hierarchical RL and meta‑control frameworks (options, meta‑learning) (Sutton & Barto; Janssen et al.) [CITATION NEEDED]
-* HRV and interoceptive measures as coherence proxies (Lazzarelli et al.; Barrowclough et al.) [CITATION NEEDED]
+* Hierarchical RL and meta‑control frameworks (options, meta‑learning) (Sutton & Barto; Janssen et al.) [8], [12]
+* HRV and interoceptive measures as coherence proxies (Lazzarelli et al.; Barrowclough et al.) [9]
 
 ---
 
