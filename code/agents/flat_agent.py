@@ -1,6 +1,6 @@
 import argparse
-from ..env.shifty_grid import ShiftyGrid
-from ..logging.traces import TraceLogger
+from env.shifty_grid import ShiftyGrid
+from trace_logging.traces import TraceLogger
 
 
 def run(episodes: int, seed: int, log_path: str = "logs/flat_traces.csv"):

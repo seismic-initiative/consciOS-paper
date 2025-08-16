@@ -1,7 +1,7 @@
 import argparse
-from ..env.shifty_grid import ShiftyGrid
-from ..selection.resonance import resonance_score
-from ..logging.traces import TraceLogger
+from env.shifty_grid import ShiftyGrid
+from selection.resonance import resonance_score
+from trace_logging.traces import TraceLogger
 
 
 def run(episodes: int, seed: int, beta: float, alpha: float, freq_on: bool, egs_on: bool, log_path: str = "logs/hier_traces.csv"):
