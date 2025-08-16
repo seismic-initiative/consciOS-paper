@@ -2,7 +2,7 @@
 
 Version: v0.1 (draft)
 
-Author: Kılıçhan (Han) Kaynak (with collaborators)
+Author: Kılıçhan (Han Kay) Kaynak (with collaborators)
 
 Link: [Seismic (draft landing)](https://navy-designs-307260.framer.app/)
 
