@@ -35,6 +35,36 @@ Reference framing: [Seismic (draft landing)](https://navy-designs-307260.framer.
   - Otonom Bootcamp summary — `summaries/otonom-bootcamp.md` ([AI Startup Bootcamp](https://www.otonom.fund/ai-startup-bootcamp)).
   - Spaghetti Startup summary — `summaries/otonom-book-spaghetti-startup.md` ([Book page](https://www.otonom.fund/spaghetti-startup-book-by-han-kay)).
 
+## 3.2 Community Program (LIVE)
+- **Objectives**: onboard builders to ConsciOS primitives; generate credible pilots; cultivate governance and safety culture.
+- **Formats**: weekly seminars, reading groups, build sprints, office hours, showcase days.
+- **Artifacts**: runnable notebooks, pilot briefs (metrics, constraints, safety), public talks, selection‑trace galleries.
+- **Metrics**: active contributors, pilots launched, reproducible notebooks merged, selection‑trace datasets published.
+- **Pathways**: standout contributors get Priority Track into Launchpad and micro‑grants from the Fund.
+
+## 3.3 ConsciOS Startups: Launchpad (READY)
+- **Program shape**: 4–6 weeks → final selection → 1:1 acceleration (from `summaries/otonom-bootcamp.md`).
+- **Flow**: application → pre‑selection → curriculum (workshops + telemetry) → demo/selection → acceleration → tiered launch.
+- **Curriculum modules**:
+  - ConsciOS architecture essentials (Echo/Super/Meta; Resonance; EGS; FREQ Coin); mapping to your product.
+  - Instrumentation: selection traces, Option‑Availability (OA), FREQ logging; safety (π_safe) and consent flows.
+  - Evaluation: ablations, baselines, coherence metrics; plots and dashboards; reproducibility.
+- **Telemetry & selection**: each team submits logs (policy switches, OA, FREQ, reward), ablation tables, and a safety plan; selection rubric scores coherence, OA uplift, alignment metrics, and execution.
+- **Outcomes**: pilot spec + working demo + public metrics report; top teams proceed to Fund review.
+
+## 3.4 Seismic Fund (MVP READY)
+- **Instruments**: micro‑grants (USD 2–10k), builder grants (USD 25–100k), venture checks (seed‑stage, case‑by‑case).
+- **Decision rubric**: ConsciOS‑aligned design; telemetry quality (selection traces, OA, FREQ); safety and governance plan; reproducibility; community contribution.
+- **Governance**: DAO proposals with structured templates; conflict‑of‑interest disclosures; transparent voting; on‑chain/public reports.
+- **Reporting**: quarterly portfolio updates; dataset/releases ledger; ethics and incidents log.
+- **Reuse**: migrate and neutralize copy from Otonom materials (see `summaries/otonom-home.md`).
+
+## 3.5 Shared Infrastructure
+- **Repo**: code templates for coherence metrics (KLD/log‑evidence/cosine), Resonance selection, logging, plotting.
+- **Datasets**: selection‑trace corpora, ablation summaries, OA/FREQ time‑series.
+- **Dashboards**: cohort metrics, safety indicators, reproducibility badges.
+- **Docs**: playbooks for pilots, consent templates, IRB guidance, governance handbook.
+
 ## 4. Operating Model
 - **Tech‑first rollout**: Publish the ConsciOS paper + demo code; run small benchmarks; share selection traces and FREQ logs; invite replication.
 - **Program tracks**: Research (benchmarks, measures), Product (pilot apps), Governance (safety, data stewardship), Education (public courses), Community (events).
