@@ -128,7 +128,7 @@ Key literatures to cite and integrate in the Related Work section for this part:
 * Predictive processing & active inference: Friston et al. [5].
 * Hierarchical control and meta‑reinforcement learning: Sutton & Barto (RL); hierarchical RL (options framework) [12], [8].
 * Affect science and interoception: Lazzarelli et al. (integrative review) [9].
-* Human‑in‑the‑loop RL, RLHF literature: technical reports (to be added). [CITATION NEEDED]
+* Human‑in‑the‑loop RL, RLHF literature: technical reports (to be added). [10]
 
 These will be expanded and precisely cited in the Related Work section following the external literature sweep.
 
@@ -756,6 +756,8 @@ Notes:
 [8] R. S. Sutton and A. G. Barto, "Reinforcement Learning: An Introduction," 2nd ed. MIT Press, 2018.
 
 [9] Integrative review of interoception and affect — [CITATION NEEDED].
+
+[10] L. Ouyang, J. Wu, X. Jiang, et al., "Training language models to follow instructions with human feedback," in Advances in Neural Information Processing Systems (NeurIPS), 2022. arXiv:2203.02155.
 
 [12] R. S. Sutton, D. Precup, and S. Singh, "Between MDPs and semi-MDPs: A framework for temporal abstraction in reinforcement learning," Artificial Intelligence, vol. 112, nos. 1–2, pp. 181–211, 1999. doi:10.1016/S0004-3702(99)00052-1.
 
