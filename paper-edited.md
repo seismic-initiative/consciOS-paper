@@ -283,6 +283,8 @@ Recommended testbeds:
 * Human experiments: controlled lab tasks with HRV and subjective EGS ladders as feedback; interventions include coherence‑enhancing microprotocols and belief‑update manipulations (see Appendix A: H1–H4).
 * Hybrid setups: human‑in‑the‑loop training where EGS signals are incorporated as shaping rewards for agent training (evaluate transfer and subjective agency).
 
+Illustrative toy ablation (sanity check). We implemented a minimal environment with episodic distributional shifts and compared a hierarchical agent using a coherence‑weighted selector (βC + αU − γCost) against a flat baseline. Sweeping β and α while logging selection traces yields aggregated heatmaps (reward, alignment rate, position‑match proxy) indicating that higher coherence weighting increases alignment with hidden context and improves simple proxy metrics in this toy setting. These traces serve as an instrumentation check only; full benchmarks belong in domain‑appropriate tasks.
+
 ###### 4.9 Transition
 
 Section 5 formalizes the Resonance Engine and the coherence metrics used by the Super‑Self to perform frame selection. The subsequent Methods Appendices provide concrete experimental templates and simulation specifications for the tests proposed here.
@@ -709,6 +711,10 @@ Experimental Protocols (full templates)
 * A.2 H2: Feedback Coherence → Option‑Availability (ecological sampling + lab micro‑tasks).
 * A.3 H3: Nested Controller Benchmark (simulations) — environment specs, seeds, agent code skeleton, logging format.
 * A.4 H4: EGS as RLHF shaping (pilot human trials) — consent forms, pre‑screening, safety checks, adversarial monitoring.
+
+* A.5 Toy ablation (simulation demo) — purpose: verify telemetry and selector sensitivity. Setup: episodic context shifts; hierarchical agent with coherence‑weighted selection (β, α sweeps); outputs: selection traces and aggregated heatmaps (reward, alignment rate, position‑match proxy). Code: repository `code/` directory (env, agents, plots); figures are illustrative only.
+
+[Figure A1: Toy ablation heatmaps across β × α (reward, alignment rate, position‑match). Illustrative demo; not a benchmark result.]
 
 (Each template: stepwise procedure, required hardware/software, analysis scripts skeleton, expected effect sizes, power calculations placeholder.)
 
