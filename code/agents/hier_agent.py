@@ -1,4 +1,5 @@
 import argparse
+import numpy as np
 from env.shifty_grid import ShiftyGrid
 from selection.resonance import resonance_score
 from trace_logging.traces import TraceLogger
@@ -14,7 +15,13 @@ def run(episodes: int, seed: int, beta: float, alpha: float, freq_on: bool, egs_
 	while ep < episodes:
 		# placeholder coherence/util estimates
 		eu_left, eu_right = 0.1, 0.1
-		c_left, c_right = 0.4, 0.6
+		# coherence shaped by context (ctx>0 favors right), with small noise
+		base, delta = 0.6, 0.2
+		ctx = int(s[1] * 2 - 1)  # reconstruct ctx in {-1, +1} from normalized signal
+		c_right = base + (delta if ctx > 0 else -delta) + float(np.random.normal(0.0, 0.05))
+		c_left = base - (delta if ctx > 0 else -delta) + float(np.random.normal(0.0, 0.05))
+		c_right = float(max(0.0, min(1.0, c_right)))
+		c_left = float(max(0.0, min(1.0, c_left)))
 		cost_left, cost_right = 0.05, 0.05
 		score_left = resonance_score(eu_left, c_left, cost_left, alpha, beta, 0.0)
 		score_right = resonance_score(eu_right, c_right, cost_right, alpha, beta, 0.0)
