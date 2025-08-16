@@ -22,9 +22,9 @@ Note: all known canonical citations are inserted; any remaining [CITATION NEEDED
 
 ###### 1.3 Notation & Metric Preamble
 
-We use the following symbols consistently throughout the paper. Π denotes a candidate policy frame; C(F; S) is a coherence metric between frame F and current state S; U(F) is task‑dependent expected utility; Cost(F) denotes computational/energetic costs; τ is a softmax temperature; λ is a decay rate in cumulative measures. Option‑Availability (OA) is operationalized as an effective action set size weighted by calibrated affordance scores.
+We use the following symbols consistently throughout the paper. Pi (Π) denotes a candidate policy frame; C(F; S) is a coherence metric between frame F and current state S; U(F) is task‑dependent expected utility; Cost(F) denotes computational/energetic costs; tau (τ) is a softmax temperature; lambda (λ) is a decay rate in cumulative measures. Option‑Availability (OA) is operationalized as an effective action set size weighted by calibrated affordance scores.
 
-Recipe (Option‑Availability): enumerate perceived viable actions at time t, assign a subjective affordance score a_i ∈ [0,1] for each option i using a brief calibration, and compute OA(t) = Σ_i a_i. For simulated agents, proxy OA by action entropy with an affordance calibration factor. These definitions support reproducible comparisons across ablations and pilots.
+Recipe (Option‑Availability): enumerate perceived viable actions at time t, assign a subjective affordance score a_i in [0,1] for each option i using a brief calibration, and compute OA(t) = sum_i a_i. For simulated agents, proxy OA by action entropy with an affordance calibration factor. These definitions support reproducible comparisons across ablations and pilots.
 
 ###### 1.2 Methods Overview
 
@@ -81,22 +81,22 @@ To move from diagnosis to design we adopt a 7‑component functional template th
 
 Formal note: this is a functional decomposition rather than a commitment to a single implementation. Processes can be parameterized as dynamical systems; Feedback channels can be formalized as observers in a control loop; Actors can be modeled as controllers with internal state representations. The template is intentionally agnostic about substrate (neural, algorithmic, institutional).
 
-Utility: the 7‑component model enables cross‑domain mapping (human ↔ software agent ↔ institution) and provides a checklist for designing experiments, simulations, or interventions that aim to change system‑level behavior. [Analogy]
+Utility: the 7‑component model enables cross‑domain mapping (human <-> software agent <-> institution) and provides a checklist for designing experiments, simulations, or interventions that aim to change system‑level behavior. [Analogy]
 
 [Figure 2: Seven‑component universal system model (Inputs, Processes, Outputs, Feedback, Actors, External Constraints, Internal Constraints).]
 Image: preprint/figures/seven_flows.png
 
-###### 2.3 Integrative Mapping: Iceberg ↔ 7‑Component Model ↔ ConsciOS Constructs
+###### 2.3 Integrative Mapping: Iceberg <-> 7‑Component Model <-> ConsciOS Constructs
 
 We propose an explicit mapping that grounds ConsciOS terms in the 7‑component template and the Iceberg diagnostic levels. This mapping converts public‑facing metaphors into testable engineering constructs.
 
-* Mental Models/Beliefs ↔ Internal Constraints (actor priors, policy parameters).
+* Mental Models/Beliefs <-> Internal Constraints (actor priors, policy parameters).
   * Example research variable: belief coherence score computed from structured inventories or posterior concentration in a Bayesian agent. [Mechanism / Hypothesis]
-* Structures ↔ External Constraints & Designed Processes (architectural code, institutional rules).
+* Structures <-> External Constraints & Designed Processes (architectural code, institutional rules).
   * Example research variable: structural coupling metrics (graph modularity, information throughput).
-* Patterns ↔ Emergent Process Dynamics (habit loops, recurrent attractors).
+* Patterns <-> Emergent Process Dynamics (habit loops, recurrent attractors).
   * Example research variable: pattern persistence index from time‑series decomposition.
-* Events ↔ Outputs (observable actions, rendered frames, sensor measurements).
+* Events <-> Outputs (observable actions, rendered frames, sensor measurements).
   * Example research variable: event frequency, latency, or categorical outcome distributions.
 
 Mapping to ConsciOS canonical elements (formal definitions):
@@ -220,7 +220,7 @@ We propose a hierarchical controller decomposition comprising three nested contr
 
 ###### 4.2 Formal definitions
 
-* Embodied controller (Echo‑Self): an agent module implementing short‑horizon perception–action loops. Formally, the Echo‑Self maintains a state estimate x_t and applies policy π_e(a|x_t; θ_e) to produce actions a_t minimizing a local cost function L_e over short horizons H_e. Measures: reaction latency τ, short‑horizon cumulative reward R_e(H_e), and action entropy H[π_e]. (Operationalized in Appendix B.) [8]
+* Embodied controller (Echo‑Self): an agent module implementing short‑horizon perception–action loops. Formally, the Echo‑Self maintains a state estimate x_t and applies policy pi_e(a|x_t; theta_e) to produce actions a_t minimizing a local cost function L_e over short horizons H_e. Measures: reaction latency tau, short‑horizon cumulative reward R_e(H_e), and action entropy H[pi_e]. (Operationalized in Appendix B.) [8]
 * Supervisory controller / policy selector (Super‑Self): a mid‑horizon controller that aggregates feedback signals over time window T_s, evaluates a set of candidate high‑level policies {Π_i}, and selects a policy family Π* that maximizes a coherence‑weighted utility: Π* = argmax_i E[U(Π_i) · C(Π_i|S)], where C is a coherence metric derived from multi‑modal feedback. Measures: selection latency, selection accuracy under perturbation, and policy stability. [12]
 * Meta‑controller / prior generator (Meta‑Self): a long‑horizon process that shapes the prior distribution P(Π) over policy families and encodes identity constraints and long‑term objectives. Meta‑Self functions are updated on slow timescales via meta‑learning or aggregated quality‑control signals. Measures: prior concentration, transfer learning performance, and changes in P(Π) after structured interventions. [8]
 
@@ -231,13 +231,13 @@ The decomposition maps onto classical viable‑system structures: Echo‑Self al
 ###### 4.4 Kernel, Ego Autopilot, and safety subsystems
 
 * Central integrative hub (Kernel): operationally the Kernel is a focal interoceptive/state‑confidence signal used by controllers to estimate coherence. For humans, proxies include heart‑rate variability (HRV) and validated interoceptive accuracy measures; for agents, Kernel is implemented as a state‑estimator confidence metric (e.g., posterior precision). Kernel feeds into Super‑Self selection and into Quality Control loops that surface misaligned priors. [5]
-* Fallback safety controller (Ego Autopilot): a low‑variance default policy engaged under low confidence or low coherence. It minimizes risk and conserves resources. Formally, Ego Autopilot is a policy π_safe that is triggered when coherence C(x_t) < θ_safe. Measures: engagement frequency, conservatism index, and recovery time. This subsystem enforces safety and explains conservative behavioral reversion patterns. [1]–[4]
+* Fallback safety controller (Ego Autopilot): a low‑variance default policy engaged under low confidence or low coherence. It minimizes risk and conserves resources. Formally, Ego Autopilot is a policy pi_safe that is triggered when coherence C(x_t) < theta_safe. Measures: engagement frequency, conservatism index, and recovery time. This subsystem enforces safety and explains conservative behavioral reversion patterns. [1]–[4]
 
 ###### 4.5 Option‑availability and the FREQ Coin formalization
 
 Option‑availability is the measurable set of viable actions perceived by an actor at time t. We operationalize Option‑Availability as the effective action set size |A_eff(t)| weighted by subjective affordance scores. FREQ Coin is a derived, time‑integrated coherence resource:
 
-FREQ(t; Δ) = ∫_{t−Δ}^{t} C(s) ds
+FREQ(t; Delta) = int_{t-Delta}^{t} C(s) ds
 
 where C(s) is the coherence metric at time s and Δ is a rolling window. Higher FREQ(t) predicts larger |A_eff(t)| and greater policy richness. Empirically, FREQ(t) can be proxied by sustained HRV coherence, EEG phase synchrony, or time‑integrated match scores in agents. Hypothesis: d|A_eff|/dFREQ > 0 (positive monotonic relation). Measurement details and analysis code are provided in Appendix B. [Hypothesis]
 
@@ -264,7 +264,7 @@ Pseudo: Imagineer_Refine_Hold(state s0, target_frame F, hold_T)
 
    > i. Hold F_t; provide reward shaping signal proportional to C_t.
 
-   e. t := t + δt
+   e. t := t + delta_t
 3. End while
 4. Return final policy frame F_final, updated priors P'(Π)
 
@@ -286,7 +286,7 @@ Recommended testbeds:
 * Human experiments: controlled lab tasks with HRV and subjective EGS ladders as feedback; interventions include coherence‑enhancing microprotocols and belief‑update manipulations (see Appendix A: H1–H4).
 * Hybrid setups: human‑in‑the‑loop training where EGS signals are incorporated as shaping rewards for agent training (evaluate transfer and subjective agency).
 
-Illustrative toy ablation (sanity check). We implemented a minimal environment with episodic distributional shifts and compared a hierarchical agent using a coherence‑weighted selector (βC + αU − γCost) against a flat baseline. Sweeping β and α while logging selection traces yields aggregated heatmaps (reward, alignment rate, position‑match proxy) indicating that higher coherence weighting increases alignment with hidden context and improves simple proxy metrics in this toy setting. These traces serve as an instrumentation check only; full benchmarks belong in domain‑appropriate tasks.
+Illustrative toy ablation (sanity check). We implemented a minimal environment with episodic distributional shifts and compared a hierarchical agent using a coherence‑weighted selector (b*C + a*U − g*Cost) against a flat baseline. Sweeping b and a while logging selection traces yields aggregated heatmaps (reward, alignment rate, position‑match proxy) indicating that higher coherence weighting increases alignment with hidden context and improves simple proxy metrics in this toy setting. These traces serve as an instrumentation check only; full benchmarks belong in domain‑appropriate tasks.
 
 ###### 4.9 Transition
 
@@ -312,7 +312,7 @@ Several alternative coherence formulations are applicable depending on data moda
   C(F_i; S) := − D_KL [ p_obs(S) || p(S | F_i) ] — negative Kullback–Leibler divergence between observed state distribution and frame prediction.
 * Similarity (vector space):
 
-  C(F_i; S) := cosine(ϕ(S), ϕ(F_i)) — cosine similarity between feature embeddings ϕ(·) of state and predicted state.
+  C(F_i; S) := cosine(phi(S), phi(F_i)) — cosine similarity between feature embeddings phi(·) of state and predicted state.
 * Composite coherence: a weighted sum of modality‑specific coherences:
 
   C(F_i; S) := Σ_m w_m · C_m(F_i; S_m), where m indexes modalities (interoception, vision, proprioception, policy performance) and w_m are learned or meta‑defined weights.
@@ -323,23 +323,23 @@ Coherence is normalized to a bounded scale (e.g., [0,1]) for downstream operatio
 
 Given a set of candidate frames {F_i} and current state S, the Resonance Engine selects the frame that maximizes an objective combining expected utility U(F_i) and coherence C(F_i; S). One canonical selection rule is:
 
-Π*(S) = argmax_{F_i} [ α · E[U(F_i) | S] + β · C(F_i; S) − γ · Cost(F_i) ]
+Pi*(S) = argmax_{F_i} [ a · E[U(F_i) | S] + b · C(F_i; S) − g · Cost(F_i) ]
 
 where:
 
 * E[U(F_i) | S] is the expected utility of adopting frame F_i given S (task dependent).
 * C(F_i; S) is the coherence metric defined above.
 * Cost(F_i) is a computational/energetic cost for switching to or instantiating F_i.
-* α, β, γ are tunable meta‑weights (could be learned by Meta‑Self).
+* a, b, g are tunable meta‑weights (could be learned by Meta‑Self).
 
 Interpretation:
 
-* The Super‑Self implements Π* by ranking frames on this composite score. When β ≫ α, selection is coherence‑driven (resonance priority); when α ≫ β, selection is utility‑driven.
+* The Super‑Self implements Pi* by ranking frames on this composite score. When b >> a, selection is coherence‑driven (resonance priority); when a >> b, selection is utility‑driven.
 * A stochastic softmax version permits exploration:
 
-P(choose F_i | S) ∝ exp(τ^{-1} · [α E[U] + β C − γ Cost])
+P(choose F_i | S) proportional to exp(tau^{-1} · [a E[U] + b C − g Cost])
 
-where τ is a temperature parameter.
+where tau is a temperature parameter.
 
 [Figure 4: Resonance Engine selection—composite scoring of expected utility, coherence, and cost with softmax or argmax selection.]
 Image: preprint/figures/resonance.png
@@ -348,9 +348,9 @@ Image: preprint/figures/resonance.png
 
 We operationalize the Emotional Guidance Scale (EGS) as a discretized or continuous scalar derived from interoceptive measures and subjective reports, serving as an internal proxy for momentary coherence/valence. Formally:
 
-EGS(t) := g(Φ_intero(S_t), ρ(S_t))
+EGS(t) := g(Phi_intero(S_t), rho(S_t))
 
-where Φ_intero(·) is a vector of physiological interoceptive metrics (e.g., HRV indices, galvanic skin response, slow cortical potentials) and ρ(S_t) is a short‑horizon predictive fit metric (e.g., one‑step prediction error). The mapping g(·) can be a learned regression (for agents) or a validated psychometric ladder (for humans). EGS is normalized to [−1, +1] (negative → low coherence/disfavor; positive → high coherence/endorsement) or to discrete bands (e.g., 1–10 ladder).
+where Phi_intero(·) is a vector of physiological interoceptive metrics (e.g., HRV indices, galvanic skin response, slow cortical potentials) and rho(S_t) is a short‑horizon predictive fit metric (e.g., one‑step prediction error). The mapping g(·) can be a learned regression (for agents) or a validated psychometric ladder (for humans). EGS is normalized to [−1, +1] (negative → low coherence/disfavor; positive → high coherence/endorsement) or to discrete bands (e.g., 1–10 ladder).
 
 EGS serves multiple roles:
 
@@ -365,21 +365,21 @@ Image: preprint/figures/egs.png
 
 Define instantaneous coherence for the active frame F* at time t as C*(t) := C(F*(t); S_t). FREQ Coin is a time‑integral of coherence, possibly with discounting:
 
-FREQ(t) := ∫_{0}^{t} e^{-λ (t−s)} · C*(s) ds
+FREQ(t) := integral_{0}^{t} e^{-lambda (t−s)} · C*(s) ds
 
-where λ ≥ 0 is a decay rate. In discrete time windows Δ:
+where lambda >= 0 is a decay rate. In discrete time windows Delta:
 
-FREQ_t = Σ_{k=0}^{N} e^{-λ k} · C*(t−k)
+FREQ_t = sum_{k=0}^{N} e^{-lambda k} · C*(t−k)
 
 Interpretation and operational use:
 
 * FREQ measures sustained time‑on‑coherence; higher FREQ grants greater option‑availability and resource allocation privileges (e.g., unlocking higher complexity frames).
-* FREQ dynamics can be used as constraints in the Super‑Self selection rule (e.g., require FREQ_t ≥ θ_unlock to consider high‑cost frames).
+* FREQ dynamics can be used as constraints in the Super‑Self selection rule (e.g., require FREQ_t >= theta_unlock to consider high‑cost frames).
 * Agent implementation: treat FREQ as a meta‑state variable updated after each episode and used in hierarchical policy gating.
 
 ###### 5.6 Algorithmic pseudocode: Resonance Engine (selection + update)
 
-Pseudocode: ResonanceEngine({F}, S, α, β, γ, τ, λ)
+Pseudocode: ResonanceEngine({F}, S, a, b, g, tau, lambda)
 
 1. For each F_i in {F}:
 
@@ -387,8 +387,8 @@ Pseudocode: ResonanceEngine({F}, S, α, β, γ, τ, λ)
 
    b. Compute EUi := ExpectedUtility(F_i | S) // task dependent
 
-   c. Score_i := α·EUi + β·C_i − γ·Cost(F_i)
-2. Compute selection probabilities: P_i ∝ exp(Score_i / τ)
+   c. Score_i := a*EUi + b*C_i − g*Cost(F_i)
+2. Compute selection probabilities: P_i proportional to exp(Score_i / tau)
 3. Sample or argmax to select F*.
 4. Execute F* for time Δt; observe S' and update experience buffers.
 5. Update C*(t), update FREQ via decay integral (FREQ_t).
@@ -411,7 +411,7 @@ Pseudocode: FullLoop(s0, candidate F_init, hold_T, NLS_params)
 
    c. Compute EGS := g(interoceptive_signals, predict_error)
 
-   d. If C_F ≥ C_hold_threshold and EGS ≥ EGS_hold_threshold for hold_min_duration:
+   d. If C_F >= C_hold_threshold and EGS >= EGS_hold_threshold for hold_min_duration:
 
    > i. Hold and encode F (increase FREQ)
    >
@@ -423,7 +423,7 @@ Pseudocode: FullLoop(s0, candidate F_init, hold_T, NLS_params)
    >
    > ii. Evaluate C_{F'} for each; choose best candidate F ← argmax C_{F'}
 
-   f. t ← t + δt
+   f. t <- t + delta_t
 3. Return F_final, history H
 
 This loop uses NLS (Nearest‑Lighter‑Step) as a bounded local search heuristic to prefer small, coherent changes. EGS acts as a rapid, embodied feedback heuristic to bias search and holding decisions.
@@ -432,7 +432,7 @@ This loop uses NLS (Nearest‑Lighter‑Step) as a bounded local search heuristi
 
 Quality Control refers to the surfacing of misaligned priors when an agent holds a new high‑coherence frame. Formally, let prior parameters be θ. On holding a new frame F_hold with high C and sustained FREQ, large prediction mismatches elsewhere can produce a gradient for updating θ:
 
-Δθ ∝ η · ∇_θ L_total(θ; D_hold)
+Delta_theta proportional to eta · grad_theta L_total(theta; D_hold)
 
 where L_total includes prediction error terms that were previously suppressed by low‑coherence priors. Practically, this results in the surfacing of contradictions (beliefs that fail to explain held states) that must be revised. This update dynamic is formalized in active inference as precision‑weighted prediction error minimization and corresponds to our observed "quality control" phenomenon. [5]
 
@@ -556,7 +556,7 @@ This section translates the ConsciOS architecture into concrete architectures, e
 
 ###### 7.2 Mapping ConsciOS to AI agent architectures
 
-* Embodied controller / low‑level policy (Echo‑Self): Implemented as a fast policy module or low‑level controller in robotics or simulated agents (e.g., policy π_e parameterized by neural networks or model predictive controllers). It handles sensory inputs and immediate action loops and exposes short‑horizon telemetry (latencies, action entropy). (Place: agent S1–S3). [8]
+* Embodied controller / low‑level policy (Echo‑Self): Implemented as a fast policy module or low‑level controller in robotics or simulated agents (e.g., policy pi_e parameterized by neural networks or model predictive controllers). It handles sensory inputs and immediate action loops and exposes short‑horizon telemetry (latencies, action entropy). (Place: agent S1–S3). [8]
 * Supervisory controller / policy selector (Super‑Self): Implemented as a mid‑level manager that selects or composes policies from a policy library or a set of options. Technically realized as a policy‑over‑options, gating network, or a learned selector (e.g., meta‑controller). It evaluates coherence metrics and expected utility and implements the ResonanceEngine selection rule. (Place: agent S4). [12]
 * Meta‑controller / prior generator (Meta‑Self): Implemented as a meta‑learning or prior‑shaping module: e.g., an outer loop that updates priors, regularizers, or initializations (MAML‑style, population‑based training, or distributional priors). It controls long‑term adaptation, governance constraints, and objective shaping. (Place: agent S5). [8]
 * Centralized coherence estimator, discretized affect index, and time‑integrated coherence resource (Kernel / EGS / FREQ): Implement as telemetry and meta‑features. Kernel = centralized coherence estimator; EGS = scalar intrinsic signal (learned/regressed from internal state plus proxy interoceptive metrics); FREQ = persistent meta‑state (time‑integrated coherence). These variables inform gating, reward shaping, and policy unlocking dynamics.
@@ -568,7 +568,7 @@ Below are prioritized experiments that produce defensible empirical claims and a
 **Experiment 1: Hierarchical Agent Benchmark (Echo/Super/Meta vs Flat)**
 
 * Setup: Build two agents in a procedurally generated environment with episodic distributional shifts: (A) Hierarchical agent with Echo/Super/Meta and FREQ gating; (B) Flat baseline agent with comparable parameter count.
-* Manipulations: Introduce sudden context shifts and resource constraints; vary β/α weights in the Resonance selection rule.
+* Manipulations: Introduce sudden context shifts and resource constraints; vary b/a weights in the Resonance selection rule.
 * Metrics: cumulative reward, adaptation latency (time to recover pre‑shift performance), policy diversity, computational cost.
 * Expected result: Hierarchical agent exhibits faster recovery, higher transfer, and graceful degradation under constraints if Meta/Super stratification is effective. [Mechanism / Hypothesis]
 
@@ -588,7 +588,7 @@ Below are prioritized experiments that produce defensible empirical claims and a
 
 **Experiment 4: FREQ Gate Unlocking Complexity**
 
-* Setup: Implement FREQ(t) as time‑integrated coherence; implement high‑cost policies that require FREQ ≥ θ to unlock.
+* Setup: Implement FREQ(t) as time‑integrated coherence; implement high‑cost policies that require FREQ >= theta to unlock.
 * Metrics: policy complexity usage, cost efficiency, task performance under time pressure.
 * Expected result: FREQ gating yields more conservative resource allocation and reduces spurious activation of expensive policies while enabling high‑value policy use when coherence is sustained. [Hypothesis]
 
@@ -604,7 +604,7 @@ Below are prioritized experiments that produce defensible empirical claims and a
 * Measurement validity & privacy: physiological signals (HRV, EGS proxies) are sensitive. All human data collection must follow IRB, GDPR/CCPA compliance, and local regulation. Use minimal necessary telemetry and strong anonymization.
 * Reward hacking & manipulation: EGS used as shaping reward may be manipulated. Implement adversarial detection, signal plausibility checks, and human override.
 * Interpretability & auditability: Design Super‑Self and Meta‑Self with explicit logging, provenance, and interpretable selection traces to enable audits and post‑hoc explanations for policy selection.
-* Safety layering: Ego Autopilot / π_safe must be robust to adversarial inputs and designed by principled safety engineering (conservative defaults, kill‑switches, oversight loops).
+* Safety layering: Ego Autopilot / pi_safe must be robust to adversarial inputs and designed by principled safety engineering (conservative defaults, kill‑switches, oversight loops).
 * Governance pathways: include stakeholder review boards, transparency reports, and open pre‑registration of human trials; consider third‑party audits for high‑impact deployments.
 
 ###### 7.6 Metrics, benchmarks and evaluation protocol
@@ -616,7 +616,7 @@ Suggested canonical metrics for pilot evaluation:
 * Option‑availability proxy: measured |A_eff(t)| via simulated affordance enumeration or human reported affordance counts (experience sampling).
 * Coherence correlation: Spearman/Pearson correlation of coherence metric C with EGS proxies and with downstream performance improvements.
 * FREQ impact: correlation and causal estimates (instrumental variable or randomized threshold experiments) of FREQ on policy unlocking and sustained performance.
-* Safety metrics: frequency of π_safe engagements, rate of adversarial detection triggers, human override rate.
+* Safety metrics: frequency of pi_safe engagements, rate of adversarial detection triggers, human override rate.
 
 ###### 7.7 Roadmap for pilots, datasets, and reproducibility
 
@@ -717,7 +717,7 @@ Experimental Protocols (full templates)
 * A.3 H3: Nested Controller Benchmark (simulations) — environment specs, seeds, agent code skeleton, logging format.
 * A.4 H4: EGS as RLHF shaping (pilot human trials) — consent forms, pre‑screening, safety checks, adversarial monitoring.
 
-* A.5 Toy ablation (simulation demo) — purpose: verify telemetry and selector sensitivity. Setup: episodic context shifts; hierarchical agent with coherence‑weighted selection (β, α sweeps); outputs: selection traces and aggregated heatmaps (reward, alignment rate, position‑match proxy). Code: repository `code/` directory (env, agents, plots); figures are illustrative only.
+* A.5 Toy ablation (simulation demo) — purpose: verify telemetry and selector sensitivity. Setup: episodic context shifts; hierarchical agent with coherence‑weighted selection (b, a sweeps); outputs: selection traces and aggregated heatmaps (reward, alignment rate, position‑match proxy). Code: repository `code/` directory (env, agents, plots); figures are illustrative only.
 
 [Figure A1: Toy ablation heatmaps across β × α (reward, alignment rate, position‑match). Illustrative demo; not a benchmark result.]
 Image: preprint/figures/ablation.png
@@ -786,7 +786,6 @@ This appendix translates public‑facing terms to canonical scholarly equivalent
 
 ### Change Log / Versioning Notes
 
-* v1.0 — initial draft (date) — public release (preprint) targeted.
-* v1.1 — expected post‑feedback patch (citation integration & appendices).
-* v2.0 — empirical results & expanded Appendix protocols.
+See `change-log-major-edits.md` for a detailed list. Summary:
+* v1.0 — initial public preprint; formal tone, canonical‑first terms, figures linked, citations integrated, Appendix C table added, preprint assets packaged.
 
