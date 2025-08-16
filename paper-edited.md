@@ -51,7 +51,7 @@ The Iceberg Model is a layered diagnostic heuristic that distinguishes observabl
 * Events (observable outputs; momentary data)
 * Patterns/Trends (temporal regularities in events)
 * Structures (rules, information flows, incentives, code, architecture)
-* Mental Models / Beliefs (operators’ assumptions, goals, and priors)
+* Mental Models / Beliefs (operators' assumptions, goals, and priors)
 
 Rationale: interventions targeted at deeper layers produce larger and more persistent systemic change than purely event‑level responses. This relationship is consistent with standard systems thinking literature and control‑theoretic intuitions about model‑based interventions [1]–[4]. [Mechanism]
 
@@ -62,7 +62,7 @@ Operationalization for empirical research:
 * Structures are encoded as formal graphs, policies, or code artifacts and can be measured via structural metrics (centrality, modularity, information flows).
 * Mental models are assessed via structured belief inventories, cognitive mapping, or inferred from policy parameters in trained agents.
 
-Consequence for the ConsciOS architecture: the Iceberg Model provides the causal ladder used to argue where and how “frequency” and “coherence” interventions (see Section 4) operate. Interventions framed as “raising frequency” are hypothesized to effect change by altering internal constraints (mental models) and thereby shifting structural dynamics that produce different patterns and events. [Hypothesis]
+Consequence for the ConsciOS architecture: the Iceberg Model provides the causal ladder used to argue where and how "frequency" and "coherence" interventions (see Section 4) operate. Interventions framed as "raising frequency" are hypothesized to effect change by altering internal constraints (mental models) and thereby shifting structural dynamics that produce different patterns and events. [Hypothesis]
 
 [Figure 1: Iceberg Model diagnostic hierarchy spanning events, patterns, structures, and mental models.]
 
@@ -75,7 +75,7 @@ To move from diagnosis to design we adopt a 7‑component functional template th
 3. Outputs — observable consequences of the system (actions, emissions, rendered scenes).
 4. Feedback — measurement channels returning output information to controllers; includes error signals and reward signals. [Mechanism]
 5. Actors — decision‑making agents, whether biological (humans) or artificial (agents, controllers).
-6. External Constraints — environmental or physical laws and constraints external to the system’s control.
+6. External Constraints — environmental or physical laws and constraints external to the system's control.
 7. Internal Constraints — encoded policies, beliefs, parameter priors, resource limits, and safety sub‑systems (e.g., ego autopilot).
 
 Formal note: this is a functional decomposition rather than a commitment to a single implementation. Processes can be parameterized as dynamical systems; Feedback channels can be formalized as observers in a control loop; Actors can be modeled as controllers with internal state representations. The template is intentionally agnostic about substrate (neural, algorithmic, institutional).
@@ -151,7 +151,7 @@ To operationalize consciousness as an engineering target we adopt a multi‑laye
 * Energetic layer: sustained coherence, affective valence, and resource metrics (e.g., metabolic/attention budgets, FREQ Coin analogues).
 * Consciousness layer: subjective report, self‑model, long‑horizon priors, and meta‑intentional structures.
 
-This tiered ontology follows contemporary approaches that treat cognition as a multi‑scale phenomenon where higher‑order priors constrain lower‑level processing (active inference / predictive processing) (Friston et al.; Albarracin et al., 2024). Active‑inference treatments of the self demonstrate how hierarchical priors instantiate self‑representations and influence perception–action loops, providing a formal justification for treating consciousness as a layered control architecture rather than a monolithic phenomenon (Albarracin et al., 2024; Friston, various). The “relevance realization” problem — how an agent determines which internal representations are presently important — has been recently formalized in the predictive‑processing literature and directly motivates the Resonance Engine as a coherence‑based selector among candidate policy frames (Darling et al., 2025).
+This tiered ontology follows contemporary approaches that treat cognition as a multi‑scale phenomenon where higher‑order priors constrain lower‑level processing (active inference / predictive processing) (Friston et al.; Albarracin et al., 2024). Active‑inference treatments of the self demonstrate how hierarchical priors instantiate self‑representations and influence perception–action loops, providing a formal justification for treating consciousness as a layered control architecture rather than a monolithic phenomenon (Albarracin et al., 2024; Friston, various). The "relevance realization" problem — how an agent determines which internal representations are presently important — has been recently formalized in the predictive‑processing literature and directly motivates the Resonance Engine as a coherence‑based selector among candidate policy frames (Darling et al., 2025).
 
 3.3 The Infinity Diagram — formalization and control interpretation
 
@@ -191,7 +191,7 @@ The ontology and operational mappings set the stage for Section 4, which formali
 
 ###### Preliminary references (from the project codex / literature review)
 
-(These are the canonical works I used to justify mappings above. I pulled these from the codex you supplied; I’ll replace any remaining placeholders with exact DOIs/arXiv IDs during the citation pass.)
+(These are the canonical works I used to justify mappings above. I pulled these from the codex you supplied; I'll replace any remaining placeholders with exact DOIs/arXiv IDs during the citation pass.)
 
 * Beer, S. (Viable System Model). [classic VSM literature referenced in codex]
 * Checkland, P. (Systems Thinking, Systems Practice). [codex]
@@ -206,7 +206,7 @@ The ontology and operational mappings set the stage for Section 4, which formali
 
 Notes:
 
-* Where I used “Friston et al.” I referenced the active inference body of work present in the codex; please indicate if you want a specific Friston paper cited (I can add DOI in the citation pass).
+* Where I used "Friston et al." I referenced the active inference body of work present in the codex; please indicate if you want a specific Friston paper cited (I can add DOI in the citation pass).
 * I left in the Hypothesis labels and showed operational measures; these are ready for conversion to formal reference pointers when you paste the exact DOI/arXiv items you fetched with Gemini (if any differ from the codex entries).
 
 ### 4. Three‑Self Architecture: A Hierarchical Controller Decomposition
@@ -236,7 +236,7 @@ Option‑availability is the measurable set of viable actions perceived by an ac
 
 FREQ(t; Δ) = ∫_{t−Δ}^{t} C(s) ds
 
-where C(s) is the coherence metric at time s and Δ is a rolling window. Higher FREQ(t) predicts larger |A_eff(t)| and greater policy richness. Empirically, FREQ(t) can be proxied by sustained HRV coherence, EEG phase synchrony, or time‑integrated match scores in agents. Hypothesis: d|A_eff|/dFREQ > 0 (positive monotonic relation). Measurement details and analysis code are provided in Appendix B. [Hypothesis; CITATION NEEDED]
+where C(s) is the coherence metric at time s and Δ is a rolling window. Higher FREQ(t) predicts larger |A_eff(t)| and greater policy richness. Empirically, FREQ(t) can be proxied by sustained HRV coherence, EEG phase synchrony, or time‑integrated match scores in agents. Hypothesis: d|A_eff|/dFREQ > 0 (positive monotonic relation). Measurement details and analysis code are provided in Appendix B. [Hypothesis]
 
 ###### 4.6 Algorithmic sketch: Imagineer → Refine → Hold (formal pseudocode)
 
@@ -429,7 +429,7 @@ Quality Control refers to the surfacing of misaligned priors when an agent holds
 
 Δθ ∝ η · ∇_θ L_total(θ; D_hold)
 
-where L_total includes prediction error terms that were previously suppressed by low‑coherence priors. Practically, this results in the surfacing of contradictions (beliefs that fail to explain held states) that must be revised. This update dynamic is formalized in active inference as precision‑weighted prediction error minimization and corresponds to our observed “quality control” phenomenon. [5]
+where L_total includes prediction error terms that were previously suppressed by low‑coherence priors. Practically, this results in the surfacing of contradictions (beliefs that fail to explain held states) that must be revised. This update dynamic is formalized in active inference as precision‑weighted prediction error minimization and corresponds to our observed "quality control" phenomenon. [5]
 
 ###### 5.9 Empirical signatures and testable predictions
 
@@ -468,9 +468,9 @@ Structure. We organize the mapping into five interlinked domains: (1) systems th
 
 ###### 6.1 Systems theory and cybernetics
 
-Summary. Stafford Beer’s Viable System Model (VSM), Checkland’s systems practice, and classical cybernetics formalize how nested control architectures, recursion, and governance sustain viable behavior in complex organizations and organisms [3], [4]. VSM decomposes systems into operational units, adaptation/intelligence functions, and policy/governance.
+Summary. Stafford Beer's Viable System Model (VSM), Checkland's systems practice, and classical cybernetics formalize how nested control architectures, recursion, and governance sustain viable behavior in complex organizations and organisms [3], [4]. VSM decomposes systems into operational units, adaptation/intelligence functions, and policy/governance.
 
-ConsciOS mapping. ConsciOS directly leverages VSM’s decomposition: Echo‑Self → VSM S1–S3; Super‑Self → VSM S4; Meta‑Self → VSM S5. This provides a credible engineering lineage for nested controllers and motivates our emphasis on governance, quality control, and structural redesign as leverage points. Where ConsciOS extends VSM is in operationalizing affective/coherence signals (EGS, Kernel) as real‑time internal feedback that indexes option‑availability and drives selection dynamics.
+ConsciOS mapping. ConsciOS directly leverages VSM's decomposition: Echo‑Self → VSM S1–S3; Super‑Self → VSM S4; Meta‑Self → VSM S5. This provides a credible engineering lineage for nested controllers and motivates our emphasis on governance, quality control, and structural redesign as leverage points. Where ConsciOS extends VSM is in operationalizing affective/coherence signals (EGS, Kernel) as real‑time internal feedback that indexes option‑availability and drives selection dynamics.
 
 Model status: the nested decomposition is [Mechanism] (well supported); the affective/coherence mapping onto VSM is an integrative extension ([Hypothesis] at the empirical level until measured).
 
@@ -480,7 +480,7 @@ Measurement & tests: map VSM components to measurable logs (policy switches, con
 
 Summary. Predictive processing and active inference cast perception and action as inference: agents minimize prediction error (or maximize model evidence) through action and belief updating [5], [6]. Hierarchical priors determine what the system expects, and precision weighting governs which errors prompt updates.
 
-ConsciOS mapping. The Resonance Engine’s coherence metric (C) parallels model evidence and the selection rule (maximize αE[U] + βC − γCost) reframes selection as evidence‑weighted policy choice. The Meta‑Self corresponds to long‑timescale priors; Super‑Self performs evidence accumulation and selection. Quality Control dynamics directly correspond to precision‑weighted prediction error updates: holding a new frame increases exposure of misalignments that drive belief revision.
+ConsciOS mapping. The Resonance Engine's coherence metric (C) parallels model evidence and the selection rule (maximize αE[U] + βC − γCost) reframes selection as evidence‑weighted policy choice. The Meta‑Self corresponds to long‑timescale priors; Super‑Self performs evidence accumulation and selection. Quality Control dynamics directly correspond to precision‑weighted prediction error updates: holding a new frame increases exposure of misalignments that drive belief revision.
 
 Model status: strong formal alignment — many ConsciOS mechanisms are [Mechanism] under active inference reframing; selection weighting (α, β tuning) and FREQ Coin as time‑integrated evidence are integrative hypotheses that can be formalized and tested [Hypothesis → Mechanism with empirical support].
 
@@ -537,7 +537,7 @@ Medium‑term priorities (6–24 months):
 * Cross‑domain replication (lab, ecological sampling, simulated agents) and release of open datasets and code.
 * Comparative studies mapping ConsciOS constructs to VSM/active inference control metrics in organizational settings.
 
-Model status summary. The paper’s structural mappings to systems theory, active inference, and hierarchical RL are principally [Mechanism]. Key operational innovations (EGS as fast control signal; FREQ Coin gating; NLS heuristic) are currently framed as [Hypothesis] and will be elevated to [Mechanism] as empirical evidence accumulates.
+Model status summary. The paper's structural mappings to systems theory, active inference, and hierarchical RL are principally [Mechanism]. Key operational innovations (EGS as fast control signal; FREQ Coin gating; NLS heuristic) are currently framed as [Hypothesis] and will be elevated to [Mechanism] as empirical evidence accumulates.
 
 ###### 6.8 Concluding note for Related Work integration
 
@@ -728,7 +728,7 @@ Experimental Protocols (full templates)
 
 ### Appendix C — Public Translation & Operationalization
 
-ConsciOS term Canonical equivalent (scholarly) Operational definition / measures Suggested citation & paper placement Echo‑Self Embodied controller / short‑horizon perception–action loop Local actor subsystem executing fast closed‑loop control. Measures: reaction latency, action entropy, short‑horizon task performance, sensorimotor noise. VSM S1–3 mapping; hierarchical RL; place: Section 4.1, Appendix B. [3], [12] Super‑Self Supervisory controller / mid‑horizon policy selector Aggregates feedback and selects among policy families. Measures: policy selection latency, switch frequency, selection accuracy under perturbation. Meta‑RL & hierarchical RL literatures; place: Section 4.1–4.4. [12], [8] Meta‑Self Meta‑controller / prior generator (meta‑learning) Encodes long‑horizon priors and the generative space of policies. Measures: prior concentration, transfer/meta‑learning performance. Meta‑learning literature; place: Section 4.1 & 7. [8] Kernel Central integrative controller / interoceptive hub (operational metaphor) Focal interoceptive node coordinating coherence estimates. Human proxy: HRV, interoceptive accuracy. Agent proxy: centralized state estimator confidence. Interoception literature; Methods/Appendix B. [9] Emotional Guidance Scale (EGS) Discretized affect index / interoceptive feedback variable Laddered affect measure used as internal control signal. Measures: self‑report ladder, HRV, EEG proxies, affect classification pipelines. Affect & interoception reviews; Section 5.2 & Appendix A. [9] Resonance Engine Coherence‑based selector / evidence‑matching selector Selector that chooses the policy frame with maximal coherence; formalizable as match‑score or Bayesian evidence metric. Measures: coherence score, selection confidence. Active inference / predictive processing literature; Section 5.1. [5] FREQ Coin Sustained coherence resource metric (operational currency) Time‑integrated coherence units (e.g., area under coherence curve). Measures: cumulative coherence over time window, option‑availability proxy. Map to neural coherence & reward accumulation literature; Section 5 & Appendix B. [CITATION NEEDED] Quality Control Belief‑surfacing / error‑signal induced model revision Frequency of internal model updates following coherence shifts. Measures: belief entropy, update rate, error signal magnitude. Active inference & Bayesian update literature; Section 5.4. [5] Parallel VR Engine Pre‑compiled policy / scenario library Library of precomputed policy frames/timelines for selection. Measures: policy diversity, match scores, retrieval latency. Meta‑RL & simulation literature; Section 5.1 / 4.4. [8], [12] Ego Autopilot Fallback safety controller / homeostatic default policy Low‑variance survival policy engagement under low‑coherence. Measures: reversion frequency, conservatism index. Control theory & safety subsystems; Section 4.2. [1]–[4] The Iceberg Diagnostic hierarchy: Event → Pattern → Structure → Mental Model Layer‑specific tests: event logs (time‑series), pattern indices, structural graphs, belief inventories. Systems thinking literature (Meadows; Senge); Section 2.1. [1], [2] The 7 Flows Inputs → Processes → Outputs → Feedback → Actors → External Constraints → Internal Constraints Systems decomposition — each flow has standard metrics (throughput, latency, bottleneck). Systems engineering & cybernetics; Section 2.2. [CITATION NEEDED]
+ConsciOS term Canonical equivalent (scholarly) Operational definition / measures Suggested citation & paper placement Echo‑Self Embodied controller / short‑horizon perception–action loop Local actor subsystem executing fast closed‑loop control. Measures: reaction latency, action entropy, short‑horizon task performance, sensorimotor noise. VSM S1–3 mapping; hierarchical RL; place: Section 4.1, Appendix B. [3], [12] Super‑Self Supervisory controller / mid‑horizon policy selector Aggregates feedback and selects among policy families. Measures: policy selection latency, switch frequency, selection accuracy under perturbation. Meta‑RL & hierarchical RL literatures; place: Section 4.1–4.4. [12], [8] Meta‑Self Meta‑controller / prior generator (meta‑learning) Encodes long‑horizon priors and the generative space of policies. Measures: prior concentration, transfer/meta‑learning performance. Meta‑learning literature; place: Section 4.1 & 7. [8] Kernel Central integrative controller / interoceptive hub (operational metaphor) Focal interoceptive node coordinating coherence estimates. Human proxy: HRV, interoceptive accuracy. Agent proxy: centralized state estimator confidence. Interoception literature; Methods/Appendix B. [9] Emotional Guidance Scale (EGS) Discretized affect index / interoceptive feedback variable Laddered affect measure used as internal control signal. Measures: self‑report ladder, HRV, EEG proxies, affect classification pipelines. Affect & interoception reviews; Section 5.2 & Appendix A. [9] Resonance Engine Coherence‑based selector / evidence‑matching selector Selector that chooses the policy frame with maximal coherence; formalizable as match‑score or Bayesian evidence metric. Measures: coherence score, selection confidence. Active inference / predictive processing literature; Section 5.1. [5] FREQ Coin Sustained coherence resource metric (operational currency) Time‑integrated coherence units (e.g., area under coherence curve). Measures: cumulative coherence over time window, option‑availability proxy. Section 5 & Appendix B. [Hypothesis] Quality Control Belief‑surfacing / error‑signal induced model revision Frequency of internal model updates following coherence shifts. Measures: belief entropy, update rate, error signal magnitude. Active inference & Bayesian update literature; Section 5.4. [5] Parallel VR Engine Pre‑compiled policy / scenario library Library of precomputed policy frames/timelines for selection. Measures: policy diversity, match scores, retrieval latency. Meta‑RL & simulation literature; Section 5.1 / 4.4. [8], [12] Ego Autopilot Fallback safety controller / homeostatic default policy Low‑variance survival policy engagement under low‑coherence. Measures: reversion frequency, conservatism index. Control theory & safety subsystems; Section 4.2. [1]–[4] The Iceberg Diagnostic hierarchy: Event → Pattern → Structure → Mental Model Layer‑specific tests: event logs (time‑series), pattern indices, structural graphs, belief inventories. Systems thinking literature (Meadows; Senge); Section 2.1. [1], [2] The 7 Flows Inputs → Processes → Outputs → Feedback → Actors → External Constraints → Internal Constraints Systems decomposition — each flow has standard metrics (throughput, latency, bottleneck). Systems engineering & cybernetics; Section 2.2.
 
 Notes:
 
