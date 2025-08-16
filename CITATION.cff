@@ -1,8 +1,9 @@
 cff-version: 1.2.0
 title: "ConsciOS v1.0: A Viable Systems Architecture for Human and AI Alignment"
 authors:
-  - family-names: Kay
-    given-names: Han
+  - family-names: Kaynak
+    given-names: Kılıçhan
+    name-particle: (Han)
 version: "v1.0"
 date-released: "2025-08-16"
 license: MIT
@@ -12,7 +13,8 @@ preferred-citation:
   type: article
   title: "ConsciOS v1.0: A Viable Systems Architecture for Human and AI Alignment"
   authors:
-    - family-names: Kay
-      given-names: Han
+    - family-names: Kaynak
+      given-names: Kılıçhan
+      name-particle: (Han)
   year: 2025
   journal: "Preprint"

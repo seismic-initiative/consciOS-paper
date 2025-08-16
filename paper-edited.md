@@ -1,5 +1,5 @@
 ## ConsciOS v1.0: A Viable Systems Architecture for Human and AI Alignment
-by Han Kay
+by Kılıçhan (Han) Kaynak
 
 
 ### Abstract
