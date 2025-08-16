@@ -64,8 +64,7 @@ Operationalization for empirical research:
 
 Consequence for the ConsciOS architecture: the Iceberg Model provides the causal ladder used to argue where and how "frequency" and "coherence" interventions (see Section 4) operate. Interventions framed as "raising frequency" are hypothesized to effect change by altering internal constraints (mental models) and thereby shifting structural dynamics that produce different patterns and events. [Hypothesis]
 
-[Figure 1: Iceberg Model diagnostic hierarchy spanning events, patterns, structures, and mental models.]
-Image: preprint/figures/iceberg.png
+![Figure 1: Iceberg Model diagnostic hierarchy spanning events, patterns, structures, and mental models.](preprint/figures/iceberg.png)
 
 ###### 2.2 The 7‑Component Universal System Model (Architectural Template)
 
@@ -83,8 +82,7 @@ Formal note: this is a functional decomposition rather than a commitment to a si
 
 Utility: the 7‑component model enables cross‑domain mapping (human <-> software agent <-> institution) and provides a checklist for designing experiments, simulations, or interventions that aim to change system‑level behavior. [Analogy]
 
-[Figure 2: Seven‑component universal system model (Inputs, Processes, Outputs, Feedback, Actors, External Constraints, Internal Constraints).]
-Image: preprint/figures/seven_flows.png
+![Figure 2: Seven‑component universal system model (Inputs, Processes, Outputs, Feedback, Actors, External Constraints, Internal Constraints).](preprint/figures/seven_flows.png)
 
 ###### 2.3 Integrative Mapping: Iceberg <-> 7‑Component Model <-> ConsciOS Constructs
 
@@ -165,8 +163,7 @@ We formalize the Infinity Diagram as a nested control topology:
 
 This nested topology is isomorphic to viable‑system decompositions used in organizational cybernetics—lower operational units are supervised by higher intelligence while a meta‑governor maintains identity and global objectives (Beer; Checkland). Importantly, the ontology treats interplay between layers as bidirectional: the Meta‑Self constrains policy families top‑down, while feedback and Quality Control mechanisms induce bottom‑up belief revision.
 
-[Figure 3: Infinity Diagram as a nested control topology mapping Echo‑Self, Super‑Self, and Meta‑Self.]
-Image: preprint/figures/infinity.png
+![Figure 3: Infinity Diagram as a nested control topology mapping Echo‑Self, Super‑Self, and Meta‑Self.](preprint/figures/infinity.png)
 
 3.4 Measurement constructs and testable mappings
 
@@ -341,8 +338,7 @@ P(choose F_i | S) proportional to exp(tau^{-1} · [a E[U] + b C − g Cost])
 
 where tau is a temperature parameter.
 
-[Figure 4: Resonance Engine selection—composite scoring of expected utility, coherence, and cost with softmax or argmax selection.]
-Image: preprint/figures/resonance.png
+![Figure 4: Resonance Engine selection—composite scoring of expected utility, coherence, and cost with softmax or argmax selection.](preprint/figures/resonance.png)
 
 ###### 5.4 Emotional Guidance Scale (EGS) as an internal control signal
 
@@ -358,8 +354,7 @@ EGS serves multiple roles:
 * Reward shaping signal for RL agents: small positive EGS deltas can be used as intrinsic reward components. [11]
 * Stopping/holding criterion in Imagineer→Refine→Hold: sustained positive EGS over hold_T supports encoding of the chosen frame.
 
-[Figure 5: Emotional Guidance Scale (EGS) as a discretized interoceptive control signal.]
-Image: preprint/figures/egs.png
+![Figure 5: Emotional Guidance Scale (EGS) as a discretized interoceptive control signal.](preprint/figures/egs.png)
 
 ###### 5.5 FREQ Coin: time‑integrated coherence currency
 
@@ -719,8 +714,7 @@ Experimental Protocols (full templates)
 
 * A.5 Toy ablation (simulation demo) — purpose: verify telemetry and selector sensitivity. Setup: episodic context shifts; hierarchical agent with coherence‑weighted selection (b, a sweeps); outputs: selection traces and aggregated heatmaps (reward, alignment rate, position‑match proxy). Code: repository `code/` directory (env, agents, plots); figures are illustrative only.
 
-[Figure A1: Toy ablation heatmaps across b x a (reward, alignment rate, position‑match). Illustrative demo; not a benchmark result.]
-Image: preprint/figures/ablation.png
+![Figure A1: Toy ablation heatmaps across b x a (reward, alignment rate, position‑match). Illustrative demo; not a benchmark result.](preprint/figures/ablation.png)
 
 (Each template: stepwise procedure, required hardware/software, analysis scripts skeleton, expected effect sizes, power calculations placeholder.)
 
@@ -734,20 +728,65 @@ Image: preprint/figures/ablation.png
 
 ### Appendix C — Public Translation & Operationalization
 
-| ConsciOS term | Canonical equivalent (scholarly) | Operational definition / measures | Suggested citation & placement |
-| --- | --- | --- | --- |
-| Echo‑Self | Embodied controller / short‑horizon perception–action loop | Local actor subsystem executing fast closed‑loop control. Measures: reaction latency, action entropy, short‑horizon task performance, sensorimotor noise. | VSM S1–3 mapping; hierarchical RL; Section 4.1, Appendix B. [3], [12] |
-| Super‑Self | Supervisory controller / mid‑horizon policy selector | Aggregates feedback and selects among policy families. Measures: policy selection latency, switch frequency, selection accuracy under perturbation. | Meta‑RL & hierarchical RL; Sections 4.1–4.4. [12], [8] |
-| Meta‑Self | Meta‑controller / prior generator (meta‑learning) | Encodes long‑horizon priors and the generative space of policies. Measures: prior concentration, transfer/meta‑learning performance. | Meta‑learning; Sections 4.1 & 7. [8] |
-| Kernel | Central integrative controller / interoceptive hub | Focal interoceptive/state‑confidence signal. Human proxy: HRV, interoceptive accuracy. Agent proxy: estimator precision. | Interoception literature; Methods/Appendix B. [9] |
-| Emotional Guidance Scale (EGS) | Discretized affect index / interoceptive feedback variable | Laddered affect used as internal control signal. Measures: self‑report ladder, HRV, EEG proxies, affect classification. | Affect & interoception reviews; Section 5.2 & Appendix A. [9] |
-| Resonance Engine | Coherence‑based selector / evidence‑matching selector | Chooses policy frame with maximal coherence; match‑score or Bayesian evidence metric. Measures: coherence score, selection confidence. | Active inference / predictive processing; Section 5.1. [5] |
-| FREQ Coin | Sustained coherence resource metric (operational currency) | Time‑integrated coherence units (e.g., area under coherence curve). Measures: cumulative coherence over window, option‑availability proxy. | Section 5 & Appendix B. [Hypothesis] |
-| Quality Control | Belief‑surfacing / error‑signal model revision | Frequency of internal model updates following coherence shifts. Measures: belief entropy, update rate, error magnitude. | Active inference & Bayesian update; Section 5.4. [5] |
-| Parallel VR Engine | Pre‑compiled policy / scenario library | Library of precomputed policy frames/timelines for selection. Measures: policy diversity, match scores, retrieval latency. | Meta‑RL & simulation; Sections 5.1 / 4.4. [8], [12] |
-| Ego Autopilot | Fallback safety controller / homeostatic default policy | Low‑variance survival policy under low‑coherence. Measures: reversion frequency, conservatism index. | Control theory & safety; Section 4.2. [1]–[4] |
-| The Iceberg | Diagnostic hierarchy: Event → Pattern → Structure → Mental Model | Layer‑specific tests: event logs (time‑series), pattern indices, structural graphs, belief inventories. | Systems thinking (Meadows; Senge); Section 2.1. [1], [2] |
-| The 7 Flows | Inputs → Processes → Outputs → Feedback → Actors → External Constraints → Internal Constraints | Systems decomposition—each flow has standard metrics (throughput, latency, bottleneck). | Systems engineering & cybernetics; Section 2.2. |
+ConsciOS term — Echo‑Self
+- Canonical equivalent (scholarly): Embodied controller / short‑horizon perception–action loop
+- Operational definition / measures: Local actor subsystem executing fast closed‑loop control. Measures: reaction latency, action entropy, short‑horizon task performance, sensorimotor noise.
+- Suggested citation & placement: VSM S1–3 mapping; hierarchical RL; Section 4.1, Appendix B. [3], [12]
+
+ConsciOS term — Super‑Self
+- Canonical equivalent (scholarly): Supervisory controller / mid‑horizon policy selector
+- Operational definition / measures: Aggregates feedback and selects among policy families. Measures: policy selection latency, switch frequency, selection accuracy under perturbation.
+- Suggested citation & placement: Meta‑RL & hierarchical RL; Sections 4.1–4.4. [12], [8]
+
+ConsciOS term — Meta‑Self
+- Canonical equivalent (scholarly): Meta‑controller / prior generator (meta‑learning)
+- Operational definition / measures: Encodes long‑horizon priors and the generative space of policies. Measures: prior concentration, transfer/meta‑learning performance.
+- Suggested citation & placement: Meta‑learning; Sections 4.1 & 7. [8]
+
+ConsciOS term — Kernel
+- Canonical equivalent (scholarly): Central integrative controller / interoceptive hub
+- Operational definition / measures: Focal interoceptive/state‑confidence signal. Human proxy: HRV, interoceptive accuracy. Agent proxy: estimator precision.
+- Suggested citation & placement: Interoception literature; Methods/Appendix B. [9]
+
+ConsciOS term — Emotional Guidance Scale (EGS)
+- Canonical equivalent (scholarly): Discretized affect index / interoceptive feedback variable
+- Operational definition / measures: Laddered affect used as internal control signal. Measures: self‑report ladder, HRV, EEG proxies, affect classification.
+- Suggested citation & placement: Affect & interoception reviews; Section 5.2 & Appendix A. [9]
+
+ConsciOS term — Resonance Engine
+- Canonical equivalent (scholarly): Coherence‑based selector / evidence‑matching selector
+- Operational definition / measures: Chooses policy frame with maximal coherence; match‑score or Bayesian evidence metric. Measures: coherence score, selection confidence.
+- Suggested citation & placement: Active inference / predictive processing; Section 5.1. [5]
+
+ConsciOS term — FREQ Coin
+- Canonical equivalent (scholarly): Sustained coherence resource metric (operational currency)
+- Operational definition / measures: Time‑integrated coherence units (e.g., area under coherence curve). Measures: cumulative coherence over window, option‑availability proxy.
+- Suggested citation & placement: Section 5 & Appendix B. [Hypothesis]
+
+ConsciOS term — Quality Control
+- Canonical equivalent (scholarly): Belief‑surfacing / error‑signal model revision
+- Operational definition / measures: Frequency of internal model updates following coherence shifts. Measures: belief entropy, update rate, error magnitude.
+- Suggested citation & placement: Active inference & Bayesian update; Section 5.4. [5]
+
+ConsciOS term — Parallel VR Engine
+- Canonical equivalent (scholarly): Pre‑compiled policy / scenario library
+- Operational definition / measures: Library of precomputed policy frames/timelines for selection. Measures: policy diversity, match scores, retrieval latency.
+- Suggested citation & placement: Meta‑RL & simulation; Sections 5.1 / 4.4. [8], [12]
+
+ConsciOS term — Ego Autopilot
+- Canonical equivalent (scholarly): Fallback safety controller / homeostatic default policy
+- Operational definition / measures: Low‑variance survival policy under low‑coherence. Measures: reversion frequency, conservatism index.
+- Suggested citation & placement: Control theory & safety; Section 4.2. [1]–[4]
+
+ConsciOS term — The Iceberg
+- Canonical equivalent (scholarly): Diagnostic hierarchy: Event -> Pattern -> Structure -> Mental Model
+- Operational definition / measures: Layer‑specific tests: event logs (time‑series), pattern indices, structural graphs, belief inventories.
+- Suggested citation & placement: Systems thinking (Meadows; Senge); Section 2.1. [1], [2]
+
+ConsciOS term — The 7 Flows
+- Canonical equivalent (scholarly): Inputs -> Processes -> Outputs -> Feedback -> Actors -> External Constraints -> Internal Constraints
+- Operational definition / measures: Systems decomposition—each flow has standard metrics (throughput, latency, bottleneck).
+- Suggested citation & placement: Systems engineering & cybernetics; Section 2.2.
 
 Notes:
 
