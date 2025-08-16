@@ -44,7 +44,8 @@ if __name__ == "__main__":
 	parser.add_argument("--alpha", type=float, default=0.5)
 	parser.add_argument("--freq_on", type=str, default="true")
 	parser.add_argument("--egs_on", type=str, default="true")
+	parser.add_argument("--log_path", type=str, default="logs/hier_traces.csv")
 	args = parser.parse_args()
-	run(args.episodes, args.seed, args.beta, args.alpha, args.freq_on.lower()=="true", args.egs_on.lower()=="true")
+	run(args.episodes, args.seed, args.beta, args.alpha, args.freq_on.lower()=="true", args.egs_on.lower()=="true", args.log_path)
 
 

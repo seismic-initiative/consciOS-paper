@@ -6,10 +6,10 @@ if ! command -v pandoc >/dev/null 2>&1; then
 fi
 mkdir -p preprint
 pandoc \
-  --from gfm \
+  --from markdown+smart+implicit_figures+link_attributes \
   --to pdf \
   --metadata title="ConsciOS v1.0: A Viable Systems Architecture for Human and AI Alignment" \
-  --pdf-engine=xelatex \
+  --pdf-engine=tectonic \
   --resource-path=. \
   --output preprint/ConsciOS_v1.0_preprint.pdf \
   paper-edited.md
