@@ -23,6 +23,18 @@ Old systems (governance, economics, health, education) are brittle and failing. 
 - **Fund (MVP READY)**: Seismic DAO & Fund—community‑governed treasury investing in aligned research and ventures. Transparent criteria; staged grants; public reports.
 Reference framing: [Seismic (draft landing)](https://navy-designs-307260.framer.app/).
 
+## 3.1 Brand Architecture & Naming Plan
+- Core adjective: **ConsciOS**.
+- Families:
+  - **ConsciOS Systems**: institutional and societal systems (governments, education, health, organizations).
+  - **ConsciOS Life**: personal and organizational practice.
+  - **ConsciOS Startups**: the Launchpad/bootcamp track (rename of prior Otonom bootcamp framing).
+- Fund naming: **Seismic Fund** (DAO‑governed); migrate assets and copy from prior Otonom material where appropriate with neutral, scientific tone.
+- Prior materials to reuse:
+  - Otonom Home summary (process and benefits) — `summaries/otonom-home.md` ([Otonom Home](https://www.otonom.fund/)).
+  - Otonom Bootcamp summary — `summaries/otonom-bootcamp.md` ([AI Startup Bootcamp](https://www.otonom.fund/ai-startup-bootcamp)).
+  - Spaghetti Startup summary — `summaries/otonom-book-spaghetti-startup.md` ([Book page](https://www.otonom.fund/spaghetti-startup-book-by-han-kay)).
+
 ## 4. Operating Model
 - **Tech‑first rollout**: Publish the ConsciOS paper + demo code; run small benchmarks; share selection traces and FREQ logs; invite replication.
 - **Program tracks**: Research (benchmarks, measures), Product (pilot apps), Governance (safety, data stewardship), Education (public courses), Community (events).
