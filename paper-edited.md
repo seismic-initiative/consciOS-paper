@@ -759,7 +759,7 @@ Notes:
 
 [10] L. Ouyang, J. Wu, X. Jiang, et al., "Training language models to follow instructions with human feedback," in Advances in Neural Information Processing Systems (NeurIPS), 2022. arXiv:2203.02155.
 
-[11] Affect-driven reinforcement learning (e.g., "Play with Emotion") — [CITATION NEEDED].
+[11] M. Barthet, A. Khalifa, A. Liapis, and G. N. Yannakakis, "Play with Emotion: Affect-Driven Reinforcement Learning," in 2022 10th International Conference on Affective Computing and Intelligent Interaction (ACII), 2022. doi:10.1109/ACII55700.2022.9953894.
 
 [12] R. S. Sutton, D. Precup, and S. Singh, "Between MDPs and semi-MDPs: A framework for temporal abstraction in reinforcement learning," Artificial Intelligence, vol. 112, nos. 1–2, pp. 181–211, 1999. doi:10.1016/S0004-3702(99)00052-1.
 
