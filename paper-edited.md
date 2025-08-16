@@ -53,7 +53,7 @@ The Iceberg Model is a layered diagnostic heuristic that distinguishes observabl
 * Structures (rules, information flows, incentives, code, architecture)
 * Mental Models / Beliefs (operators’ assumptions, goals, and priors)
 
-Rationale: interventions targeted at deeper layers produce larger and more persistent systemic change than purely event‑level responses. This relationship is consistent with standard systems thinking literature and control‑theoretic intuitions about model‑based interventions. [CITATION NEEDED: Meadows; Senge; Beer] [Mechanism]
+Rationale: interventions targeted at deeper layers produce larger and more persistent systemic change than purely event‑level responses. This relationship is consistent with standard systems thinking literature and control‑theoretic intuitions about model‑based interventions [1]–[4]. [Mechanism]
 
 Operationalization for empirical research:
 
@@ -123,12 +123,12 @@ Each hypothesis is followed by a suggested experimental probe in the Appendix. I
 
 Key literatures to cite and integrate in the Related Work section for this part:
 
-* Systems thinking: Senge (The Fifth Discipline); Meadows (Thinking in Systems). [CITATION NEEDED]
-* Viable System Model / cybernetics: Stafford Beer; Checkland. [CITATION NEEDED]
-* Predictive processing & active inference: Friston et al. [CITATION NEEDED]
-* Hierarchical control and meta‑reinforcement learning: Sutton & Barto (RL); meta‑learning literature; hierarchical RL (options framework). [CITATION NEEDED]
-* Affect science and interoception: Lisa Feldman Barrett, Anil Seth, Antonio Damasio. [CITATION NEEDED]
-* Human‑in‑the‑loop RL, RLHF literature: OpenAI/DeepMind/Anthropic technical reports. [CITATION NEEDED]
+* Systems thinking: Senge (The Fifth Discipline); Meadows (Thinking in Systems) [1], [2].
+* Viable System Model / cybernetics: Stafford Beer; Checkland [3], [4].
+* Predictive processing & active inference: Friston et al. [5].
+* Hierarchical control and meta‑reinforcement learning: Sutton & Barto (RL); hierarchical RL (options framework) [12], [8].
+* Affect science and interoception: Lazzarelli et al. (integrative review) [9].
+* Human‑in‑the‑loop RL, RLHF literature: technical reports (to be added). [CITATION NEEDED]
 
 These will be expanded and precisely cited in the Related Work section following the external literature sweep.
 
@@ -213,7 +213,7 @@ Notes:
 
 ###### 4.1 Overview and formal motivation
 
-We propose a hierarchical controller decomposition comprising three nested control strata: (a) a short‑horizon embodied controller (Echo‑Self), (b) a supervisory/meta‑controller that selects policy families (Super‑Self), and (c) a long‑horizon priors generator or meta‑controller (Meta‑Self). This decomposition follows the engineering logic of viable system architectures and hierarchical control frameworks: lower levels execute fast closed‑loop control, intermediate levels perform policy selection and adaptation, and the highest level encodes identity and long‑term priors that bias learning and selection [Beer; Checkland; hierarchical RL; active inference, CITATION NEEDED]. Framing these strata as nested controllers yields clear testable predictions about adaptation, robustness, and option‑availability.
+We propose a hierarchical controller decomposition comprising three nested control strata: (a) a short‑horizon embodied controller (Echo‑Self), (b) a supervisory/meta‑controller that selects policy families (Super‑Self), and (c) a long‑horizon priors generator or meta‑controller (Meta‑Self). This decomposition follows the engineering logic of viable system architectures and hierarchical control frameworks: lower levels execute fast closed‑loop control, intermediate levels perform policy selection and adaptation, and the highest level encodes identity and long‑term priors that bias learning and selection [3]–[5], [8]. Framing these strata as nested controllers yields clear testable predictions about adaptation, robustness, and option‑availability.
 
 ###### 4.2 Formal definitions
 
@@ -223,7 +223,7 @@ We propose a hierarchical controller decomposition comprising three nested contr
 
 ###### 4.3 Mapping to Viable System Model and control theory
 
-The decomposition maps onto classical viable‑system structures: Echo‑Self aligns with VSM System 1–3 (operational units and immediate control), Super‑Self corresponds to VSM System 4 (intelligence, adaptation, future planning), and Meta‑Self corresponds to VSM System 5 (policy, identity, normative governance) [Beer; Checkland, CITATION NEEDED]. From control theory, Echo‑Self controllers implement fast feedback loops (high bandwidth, low latency), Super‑Self functions as a supervisory scheduler or switching controller, and Meta‑Self implements slow adaptation (set‑point adjustment, change of objective function).
+The decomposition maps onto classical viable‑system structures: Echo‑Self aligns with VSM System 1–3 (operational units and immediate control), Super‑Self corresponds to VSM System 4 (intelligence, adaptation, future planning), and Meta‑Self corresponds to VSM System 5 (policy, identity, normative governance) [3], [4]. From control theory, Echo‑Self controllers implement fast feedback loops (high bandwidth, low latency), Super‑Self functions as a supervisory scheduler or switching controller, and Meta‑Self implements slow adaptation (set‑point adjustment, change of objective function).
 
 ###### 4.4 Kernel, Ego Autopilot, and safety subsystems
 
@@ -743,7 +743,21 @@ Notes:
 
 ### References
 
-Placeholder: list canonical references (Beer; Checkland; Friston; Albarracin et al., 2024; Darling et al., 2025; Janssen et al., 2022; Lazzarelli et al., 2024; Barthet et al., 2022; Barrowclough et al., 2025; Zeng et al., 2025) plus [CITATION NEEDED] tags for others. Will be populated in citation pass.
+[1] P. M. Senge, "The Fifth Discipline: The Art and Practice of the Learning Organization," Revised and Updated. Doubleday/Currency, 2006.
+
+[2] D. H. Meadows, "Thinking in Systems: A Primer." Chelsea Green Publishing, 2008.
+
+[3] S. Beer, "Brain of the Firm." John Wiley & Sons, 1972.
+
+[4] P. Checkland, "Systems Thinking, Systems Practice." John Wiley & Sons, 1981.
+
+[5] K. Friston, "The free-energy principle: a unified brain theory?," Nature Reviews Neuroscience, vol. 11, no. 2, pp. 127–138, 2010. doi:10.1038/nrn2787.
+
+[8] R. S. Sutton and A. G. Barto, "Reinforcement Learning: An Introduction," 2nd ed. MIT Press, 2018.
+
+[9] Integrative review of interoception and affect — [CITATION NEEDED].
+
+[12] R. S. Sutton, D. Precup, and S. Singh, "Between MDPs and semi-MDPs: A framework for temporal abstraction in reinforcement learning," Artificial Intelligence, vol. 112, nos. 1–2, pp. 181–211, 1999. doi:10.1016/S0004-3702(99)00052-1.
 
 ### Change Log / Versioning Notes
 
