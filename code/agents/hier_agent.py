@@ -1,13 +1,17 @@
 import argparse
 from ..env.shifty_grid import ShiftyGrid
 from ..selection.resonance import resonance_score
+from ..logging.traces import TraceLogger
 
 
 def run(episodes: int, seed: int, beta: float, alpha: float, freq_on: bool, egs_on: bool):
 	env = ShiftyGrid(seed=seed)
+	logger = TraceLogger(path="logs/hier_traces.csv", header=[
+		"episode","step","ctx","action","reward","norm_pos","score_left","score_right"
+	])
 	s = env.reset()
-	# toy: two candidate frames (left vs right) with dummy utilities; select via resonance_score
-	for ep in range(episodes):
+	ep, step = 0, 0
+	while ep < episodes:
 		# placeholder coherence/util estimates
 		eu_left, eu_right = 0.1, 0.1
 		c_left, c_right = 0.4, 0.6
@@ -16,8 +20,13 @@ def run(episodes: int, seed: int, beta: float, alpha: float, freq_on: bool, egs_
 		score_right = resonance_score(eu_right, c_right, cost_right, alpha, beta, 0.0)
 		a = 1 if score_right >= score_left else -1
 		s, r, done, info = env.step(a)
+		norm_pos = float(s[0])
+		logger.log_row([ep, step, int(info.get("ctx", 0)), a, float(r), norm_pos, score_left, score_right])
+		step += 1
 		if done:
-			env.reset()
+			ep += 1
+			step = 0
+			s = env.reset()
 
 
 if __name__ == "__main__":

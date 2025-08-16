@@ -1,16 +1,26 @@
 import argparse
 from ..env.shifty_grid import ShiftyGrid
+from ..logging.traces import TraceLogger
 
 
 def run(episodes: int, seed: int):
 	env = ShiftyGrid(seed=seed)
+	logger = TraceLogger(path="logs/flat_traces.csv", header=[
+		"episode","step","ctx","action","reward","norm_pos","score_left","score_right"
+	])
 	s = env.reset()
-	for ep in range(episodes):
+	ep, step = 0, 0
+	while ep < episodes:
 		# naive policy: always move toward right
 		a = 1
 		s, r, done, info = env.step(a)
+		norm_pos = float(s[0])
+		logger.log_row([ep, step, int(info.get("ctx", 0)), a, float(r), norm_pos, "", ""])  # scores empty for flat baseline
+		step += 1
 		if done:
-			env.reset()
+			ep += 1
+			step = 0
+			s = env.reset()
 
 
 def main():
